@@ -11,8 +11,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   double iconSize = 15;
   double arrivalSize = 13;
   double bestSellersSize = 13;
@@ -28,10 +27,18 @@ class _HomePageState extends State<HomePage>
   double popImage1height = 300;
   double popImage1width = 280;
 
-
   late AnimationController _controller;
   late Animation _animation;
   late Animation padding;
+  late AnimationController _controller2;
+  late Animation _animation2;
+  late Animation padding2;
+  late AnimationController _controller3;
+  late Animation _animation3;
+  late Animation padding3;
+  late AnimationController _controller4;
+  late Animation _animation4;
+  late Animation padding4;
 
   @override
   void initState() {
@@ -41,13 +48,49 @@ class _HomePageState extends State<HomePage>
       vsync: this,
     );
 
+    _controller2 = AnimationController(
+      duration: Duration(milliseconds: 275),
+      vsync: this,
+    );
+
+    _controller3 = AnimationController(
+      duration: Duration(milliseconds: 275),
+      vsync: this,
+    );
+
+    _controller4 = AnimationController(
+      duration: Duration(milliseconds: 275),
+      vsync: this,
+    );
+
     _animation = Tween(begin: 1.0, end: 1.2)
         .animate(CurvedAnimation(parent: _controller, curve: Curves.ease));
+    _animation2 = Tween(begin: 1.0, end: 1.2)
+        .animate(CurvedAnimation(parent: _controller2, curve: Curves.ease));
+    _animation3 = Tween(begin: 1.0, end: 1.2)
+        .animate(CurvedAnimation(parent: _controller3, curve: Curves.ease));
+    _animation4 = Tween(begin: 1.0, end: 1.2)
+        .animate(CurvedAnimation(parent: _controller4, curve: Curves.ease));
 
     padding = Tween(begin: 0.0, end: -25.0)
         .animate(CurvedAnimation(parent: _controller, curve: Curves.ease));
+    padding2 = Tween(begin: 0.0, end: -25.0)
+        .animate(CurvedAnimation(parent: _controller2, curve: Curves.ease));
+    padding3 = Tween(begin: 0.0, end: -25.0)
+        .animate(CurvedAnimation(parent: _controller3, curve: Curves.ease));
+    padding4 = Tween(begin: 0.0, end: -25.0)
+        .animate(CurvedAnimation(parent: _controller4, curve: Curves.ease));
 
     _controller.addListener(() {
+      setState(() {});
+    });
+    _controller2.addListener(() {
+      setState(() {});
+    });
+    _controller3.addListener(() {
+      setState(() {});
+    });
+    _controller4.addListener(() {
       setState(() {});
     });
   }
@@ -59,7 +102,8 @@ class _HomePageState extends State<HomePage>
     ),
     const Text('T-shirt wholesale promo on-going',
         style: TextStyle(fontSize: 15, color: Colors.black)),
-    const Text('Fund your wallet unlock irresistible offers', style: TextStyle(fontSize: 14, color: Colors.black))
+    const Text('Fund your wallet unlock irresistible offers',
+        style: TextStyle(fontSize: 14, color: Colors.black))
   ];
   @override
   Widget build(BuildContext context) {
@@ -460,71 +504,165 @@ class _HomePageState extends State<HomePage>
                     direction: Axis.horizontal,
                     children: [
                       MouseRegion(
-                        onEnter: (value){
+                        onEnter: (value) {
                           setState(() {
                             _controller.forward();
                           });
-                        },onExit: (value){
-                        setState(() {
-                          _controller.reverse();
-                        });
-                      },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black,
-                                offset: Offset(0.0 , 20.0),
-                                spreadRadius: -10,
-                                blurRadius: 30
-                              )
-                            ]
-                          ),
+                        },
+                        onExit: (value) {
+                          setState(() {
+                            _controller.reverse();
+                          });
+                        },
                           child: ClipRRect(
                             child: Container(
                               // clipBehavior: Clip.antiAlias,
                               height: popImage1height,
                               width: popImage1width,
-                               transform: Matrix4(_animation.value,0,0,0,0,_animation.value,0,0,0,0,1,0,padding.value,padding.value,0,1),
+                              transform: Matrix4(
+                                  _animation.value,
+                                  0,
+                                  0,
+                                  0,
+                                  0,
+                                  _animation.value,
+                                  0,
+                                  0,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  padding.value,
+                                  padding.value,
+                                  0,
+                                  1),
                               child: Image.asset(
-                                'assets/images/RTFM.jpg',
+                                'assets/images/apblue.png',
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
+
+                      ),
+                      MouseRegion(
+                        onEnter: (value) {
+                          setState(() {
+                            _controller2.forward();
+                          });
+                        },
+                        onExit: (value) {
+                          setState(() {
+                            _controller2.reverse();
+                          });
+                        },
+                        child: ClipRRect(
+                          child: Container(
+                            // clipBehavior: Clip.antiAlias,
+                            height: popImage1height,
+                            width: popImage1width,
+                            transform: Matrix4(
+                                _animation2.value,
+                                0,
+                                0,
+                                0,
+                                0,
+                                _animation2.value,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                padding2.value,
+                                padding2.value,
+                                0,
+                                1),
+                            child: Image.asset(
+                              'assets/images/c1.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
                       ),
-
-                      // Container(
-                      //  // clipBehavior: Clip.hardEdge,
-                      //   height: widget.popImage1height,
-                      //   width: widget.popImage1width,
-                      //   transform: Matrix4(_animation.value,0,0,0,0,_animation.value,0,0,0,0,1,0,padding.value,padding.value,0,1),
-                      //   child: Image.asset(
-                      //     'assets/images/RTFM.jpg',
-                      //     fit: BoxFit.cover,
-                      //   ),
-                      // ),
-                      Container(
-                        height: 300,
-                        width: 280,
-                        color: Colors.brown,
+                      MouseRegion(
+                        onEnter: (value) {
+                          setState(() {
+                            _controller3.forward();
+                          });
+                        },
+                        onExit: (value) {
+                          setState(() {
+                            _controller3.reverse();
+                          });
+                        },
+                        child: ClipRRect(
+                          child: Container(
+                            // clipBehavior: Clip.antiAlias,
+                            height: popImage1height,
+                            width: popImage1width,
+                            transform: Matrix4(
+                                _animation3.value,
+                                0,
+                                0,
+                                0,
+                                0,
+                                _animation3.value,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                padding3.value,
+                                padding3.value,
+                                0,
+                                1),
+                            child: Image.asset(
+                              'assets/images/c2.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                       ),
-                      Container(
-                        height: 300,
-                        width: 280,
-                        color: Colors.tealAccent,
-                      ),
-                      Container(
-                        height: 300,
-                        width: 280,
-                        color: Colors.teal,
-                      ),
-                      Container(
-                        height: 300,
-                        width: 280,
-                        color: Colors.yellow,
+                      MouseRegion(
+                        onEnter: (value) {
+                          setState(() {
+                            _controller4.forward();
+                          });
+                        },
+                        onExit: (value) {
+                          setState(() {
+                            _controller4.reverse();
+                          });
+                        },
+                        child: ClipRRect(
+                          child: Container(
+                            // clipBehavior: Clip.antiAlias,
+                            height: popImage1height,
+                            width: popImage1width,
+                            transform: Matrix4(
+                                _animation4.value,
+                                0,
+                                0,
+                                0,
+                                0,
+                                _animation4.value,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                padding4.value,
+                                padding4.value,
+                                0,
+                                1),
+                            child: Image.asset(
+                              'assets/images/c3.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   )
