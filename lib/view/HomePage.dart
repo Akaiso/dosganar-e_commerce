@@ -1,11 +1,11 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utilities.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -44,22 +44,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(milliseconds: 275),
+      duration: const Duration(milliseconds: 275),
       vsync: this,
     );
 
     _controller2 = AnimationController(
-      duration: Duration(milliseconds: 275),
+      duration: const Duration(milliseconds: 275),
       vsync: this,
     );
 
     _controller3 = AnimationController(
-      duration: Duration(milliseconds: 275),
+      duration: const Duration(milliseconds: 275),
       vsync: this,
     );
 
     _controller4 = AnimationController(
-      duration: Duration(milliseconds: 275),
+      duration: const Duration(milliseconds: 275),
       vsync: this,
     );
 
@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ],
                 bottom: AppBar(
                   leading: MediaQuery.of(context).size.width < 1150
-                      ? Icon(
+                      ? const Icon(
                           Icons.menu,
                           color: Colors.black,
                         )
@@ -201,130 +201,128 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   centerTitle: true,
                   elevation: 0,
                   backgroundColor: Colors.white,
-                  title: Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        MediaQuery.of(context).size.width < 1150
-                            ? Container()
-                            : Container(
-                                color: Colors.black,
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'DOGANAR',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MediaQuery.of(context).size.width < 1150
+                          ? Container()
+                          : Container(
+                              color: Colors.black,
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  'DOGANAR',
+                                  style: TextStyle(color: Colors.white),
                                 ),
                               ),
-                        MediaQuery.of(context).size.width < 1150
-                            ? Row(
-                                children: [
-                                  Container(
-                                    color: Colors.black,
-                                    child: const Padding(
-                                      padding: EdgeInsets.all(8.0),
-                                      child: Text(
-                                        'DOGANAR',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
+                            ),
+                      MediaQuery.of(context).size.width < 1150
+                          ? Row(
+                              children: [
+                                Container(
+                                  color: Colors.black,
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'DOGANAR',
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                   ),
-                                ],
-                              )
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  const SizedBox(width: 150),
-                                  SizedBox(
-                                      width: 110,
-                                      child: widgetHover(
-                                          'NEW ARRIVALS',
-                                          TextStyle(
-                                              color: Colors.black,
-                                              fontSize: arrivalSize),
-                                          (_) => setState(() {
-                                                arrivalSize = 15;
-                                              }),
-                                          (_) => setState(() {
-                                                arrivalSize = 13;
-                                              }))),
-                                  const SizedBox(width: 10),
-                                  SizedBox(
-                                      width: 110,
-                                      child: widgetHover(
-                                          'BEST SELLERS',
-                                          TextStyle(
-                                              color: Colors.black,
-                                              fontSize: bestSellersSize),
-                                          (_) => setState(() {
-                                                bestSellersSize = 15;
-                                              }),
-                                          (_) => setState(() {
-                                                bestSellersSize = 13;
-                                              }))),
-                                  const SizedBox(width: 10),
-                                  SizedBox(
-                                      width: 80,
-                                      child: widgetHover(
-                                          'SUITCASES',
-                                          TextStyle(
-                                              color: Colors.black,
-                                              fontSize: suitcasesSize),
-                                          (_) => setState(() {
-                                                suitcasesSize = 15;
-                                              }),
-                                          (_) => setState(() {
-                                                suitcasesSize = 13;
-                                              }))),
-                                  const SizedBox(width: 10),
-                                  SizedBox(
-                                      width: 50,
-                                      child: widgetHover(
-                                          'BAGS',
-                                          TextStyle(
-                                              color: Colors.black,
-                                              fontSize: bagsSize),
-                                          (_) => setState(() {
-                                                bagsSize = 15;
-                                              }),
-                                          (_) => setState(() {
-                                                bagsSize = 13;
-                                              }))),
-                                  const SizedBox(width: 10),
-                                  SizedBox(
-                                      width: 100,
-                                      child: widgetHover(
-                                          'ACCESSORIES',
-                                          TextStyle(
-                                              color: Colors.black,
-                                              fontSize: accessSize),
-                                          (_) => setState(() {
-                                                accessSize = 15;
-                                              }),
-                                          (_) => setState(() {
-                                                accessSize = 13;
-                                              }))),
-                                  const SizedBox(width: 10),
-                                  SizedBox(
-                                      width: 170,
-                                      child: widgetHover(
-                                          'GUIDES & COLLECTIONS',
-                                          TextStyle(
-                                              color: Colors.black,
-                                              fontSize: gcSize),
-                                          (_) => setState(() {
-                                                gcSize = 15;
-                                              }),
-                                          (_) => setState(() {
-                                                gcSize = 13;
-                                              }))),
-                                  // const SizedBox(width: 100),
-                                ],
-                              ),
-                      ],
-                    ),
+                                ),
+                              ],
+                            )
+                          : Row(
+                              mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                              children: [
+                                const SizedBox(width: 150),
+                                SizedBox(
+                                    width: 110,
+                                    child: widgetHover(
+                                        'NEW ARRIVALS',
+                                        TextStyle(
+                                            color: Colors.black,
+                                            fontSize: arrivalSize),
+                                        (_) => setState(() {
+                                              arrivalSize = 15;
+                                            }),
+                                        (_) => setState(() {
+                                              arrivalSize = 13;
+                                            }))),
+                                const SizedBox(width: 10),
+                                SizedBox(
+                                    width: 110,
+                                    child: widgetHover(
+                                        'BEST SELLERS',
+                                        TextStyle(
+                                            color: Colors.black,
+                                            fontSize: bestSellersSize),
+                                        (_) => setState(() {
+                                              bestSellersSize = 15;
+                                            }),
+                                        (_) => setState(() {
+                                              bestSellersSize = 13;
+                                            }))),
+                                const SizedBox(width: 10),
+                                SizedBox(
+                                    width: 80,
+                                    child: widgetHover(
+                                        'SUITCASES',
+                                        TextStyle(
+                                            color: Colors.black,
+                                            fontSize: suitcasesSize),
+                                        (_) => setState(() {
+                                              suitcasesSize = 15;
+                                            }),
+                                        (_) => setState(() {
+                                              suitcasesSize = 13;
+                                            }))),
+                                const SizedBox(width: 10),
+                                SizedBox(
+                                    width: 50,
+                                    child: widgetHover(
+                                        'BAGS',
+                                        TextStyle(
+                                            color: Colors.black,
+                                            fontSize: bagsSize),
+                                        (_) => setState(() {
+                                              bagsSize = 15;
+                                            }),
+                                        (_) => setState(() {
+                                              bagsSize = 13;
+                                            }))),
+                                const SizedBox(width: 10),
+                                SizedBox(
+                                    width: 100,
+                                    child: widgetHover(
+                                        'ACCESSORIES',
+                                        TextStyle(
+                                            color: Colors.black,
+                                            fontSize: accessSize),
+                                        (_) => setState(() {
+                                              accessSize = 15;
+                                            }),
+                                        (_) => setState(() {
+                                              accessSize = 13;
+                                            }))),
+                                const SizedBox(width: 10),
+                                SizedBox(
+                                    width: 170,
+                                    child: widgetHover(
+                                        'GUIDES & COLLECTIONS',
+                                        TextStyle(
+                                            color: Colors.black,
+                                            fontSize: gcSize),
+                                        (_) => setState(() {
+                                              gcSize = 15;
+                                            }),
+                                        (_) => setState(() {
+                                              gcSize = 13;
+                                            }))),
+                                // const SizedBox(width: 100),
+                              ],
+                            ),
+                    ],
                   ),
                   actions: [
                     Padding(
@@ -380,11 +378,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ],
             body: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Wrap(
+                      direction: Axis.horizontal,
                       children: [
                         Container(
                           height: 500,
@@ -398,59 +397,69 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ),
                         ),
                         Container(
-                          height: 500,
-                          width: MediaQuery.of(context).size.width < 100
+                          height: MediaQuery.of(context).size.width < 1000
+                              ? 300
+                              : 500,
+                          width: MediaQuery.of(context).size.width < 1000
                               ? MediaQuery.of(context).size.width
                               : MediaQuery.of(context).size.width * 0.5,
-                          color: const Color(0xff7f1eb),
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Text('SAVE ON THE PERFECT ITEM',
-                                    style: TextStyle(
-                                      fontSize: 70,
-                                    ),
-                                    textAlign: TextAlign.center),
-                                const Text(
-                                    '\$50 off any item for a limited time. *Hurry \n'
-                                    '-Your new favourite item is waiting',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    textAlign: TextAlign.center),
-                                MouseRegion(
-                                  onHover: (_) {
-                                    setState(() {
-                                      shopnowBoxColor = Colors.black;
-                                      shopnowColor = Colors.white;
-                                    });
-                                  },
-                                  onExit: (_) {
-                                    setState(() {
-                                      shopnowBoxColor = Colors.transparent;
-                                      shopnowColor = Colors.black;
-                                    });
-                                  },
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: shopnowBoxColor,
-                                        border:
-                                            Border.all(color: Colors.black)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 15.0, horizontal: 30),
-                                      child: InkWell(
-                                          child: Text(
-                                        'SHOP NOW',
-                                        style: TextStyle(
-                                            color: shopnowColor,
-                                            fontWeight: FontWeight.w500),
-                                      )),
-                                    ),
+                          color: const Color(0x0ff7f1eb),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const SizedBox(
+                                    width: 300,
+                                    height: 100,
+                                    child:
+                                        AutoSizeText('SAVE ON THE PERFECT ITEM',
+                                            style: TextStyle(
+                                              fontSize: 70,
+                                            ),
+                                            textAlign: TextAlign.center),
                                   ),
-                                )
-                              ]),
+                                  const Text(
+                                      '\$50 off any item for a limited time. *Hurry \n'
+                                      '-Your new favourite item is waiting',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                      ),
+                                      textAlign: TextAlign.center),
+                                  const SizedBox(height: 20),
+                                  MouseRegion(
+                                    onHover: (_) {
+                                      setState(() {
+                                        shopnowBoxColor = Colors.black;
+                                        shopnowColor = Colors.white;
+                                      });
+                                    },
+                                    onExit: (_) {
+                                      setState(() {
+                                        shopnowBoxColor = Colors.transparent;
+                                        shopnowColor = Colors.black;
+                                      });
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          color: shopnowBoxColor,
+                                          border:
+                                              Border.all(color: Colors.black)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 15.0, horizontal: 30),
+                                        child: InkWell(
+                                            child: Text(
+                                          'SHOP NOW',
+                                          style: TextStyle(
+                                              color: shopnowColor,
+                                              fontWeight: FontWeight.w500),
+                                        )),
+                                      ),
+                                    ),
+                                  )
+                                ]),
+                          ),
                         )
                       ],
                     ),
@@ -514,35 +523,34 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             _controller.reverse();
                           });
                         },
-                          child: ClipRRect(
-                            child: Container(
-                              // clipBehavior: Clip.antiAlias,
-                              height: popImage1height,
-                              width: popImage1width,
-                              transform: Matrix4(
-                                  _animation.value,
-                                  0,
-                                  0,
-                                  0,
-                                  0,
-                                  _animation.value,
-                                  0,
-                                  0,
-                                  0,
-                                  0,
-                                  1,
-                                  0,
-                                  padding.value,
-                                  padding.value,
-                                  0,
-                                  1),
-                              child: Image.asset(
-                                'assets/images/apblue.png',
-                                fit: BoxFit.cover,
-                              ),
+                        child: ClipRRect(
+                          child: Container(
+                            // clipBehavior: Clip.antiAlias,
+                            height: popImage1height,
+                            width: popImage1width,
+                            transform: Matrix4(
+                                _animation.value,
+                                0,
+                                0,
+                                0,
+                                0,
+                                _animation.value,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                padding.value,
+                                padding.value,
+                                0,
+                                1),
+                            child: Image.asset(
+                              'assets/images/apblue.png',
+                              fit: BoxFit.cover,
                             ),
                           ),
-
+                        ),
                       ),
                       MouseRegion(
                         onEnter: (value) {
