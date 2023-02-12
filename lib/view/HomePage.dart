@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utilities.dart';
+import '../widgets/Widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -232,8 +233,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               ],
                             )
                           : Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const SizedBox(width: 150),
                                 SizedBox(
@@ -390,7 +390,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           width: MediaQuery.of(context).size.width < 1000
                               ? MediaQuery.of(context).size.width
                               : MediaQuery.of(context).size.width * 0.5,
-                          color: const Color(0xff9eabb0),
+                          color: const Color(0xffe8ddd4),
                           child: Image.asset(
                             'assets/images/first.jpg',
                             fit: BoxFit.cover,
@@ -403,7 +403,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           width: MediaQuery.of(context).size.width < 1000
                               ? MediaQuery.of(context).size.width
                               : MediaQuery.of(context).size.width * 0.5,
-                          color: const Color(0x0ff7f1eb),
+                          color: const Color(0xffddcec0),   //(0x0ff7f1eb),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Column(
@@ -512,168 +512,353 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Wrap(
                     direction: Axis.horizontal,
                     children: [
-                      MouseRegion(
-                        onEnter: (value) {
-                          setState(() {
-                            _controller.forward();
-                          });
-                        },
-                        onExit: (value) {
-                          setState(() {
-                            _controller.reverse();
-                          });
-                        },
-                        child: ClipRRect(
-                          child: Container(
-                            // clipBehavior: Clip.antiAlias,
-                            height: popImage1height,
-                            width: popImage1width,
-                            transform: Matrix4(
-                                _animation.value,
-                                0,
-                                0,
-                                0,
-                                0,
-                                _animation.value,
-                                0,
-                                0,
-                                0,
-                                0,
-                                1,
-                                0,
-                                padding.value,
-                                padding.value,
-                                0,
-                                1),
-                            child: Image.asset(
-                              'assets/images/apblue.png',
-                              fit: BoxFit.cover,
+                      Container(
+                        width: popImage1width,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MouseRegion(
+                              onEnter: (value) {
+                                setState(() {
+                                  _controller.forward();
+                                });
+                              },
+                              onExit: (value) {
+                                setState(() {
+                                  _controller.reverse();
+                                });
+                              },
+                              child: ClipRRect(
+                                child: Container(
+                                  // clipBehavior: Clip.antiAlias,
+                                  height: popImage1height,
+                                  width: popImage1width,
+                                  transform: Matrix4(
+                                      _animation.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      _animation.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      padding.value,
+                                      padding.value,
+                                      0,
+                                      1),
+                                  child: Image.asset(
+                                    'assets/images/apblue.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(height: 20),
+                            Container(
+                                width: 250,
+                                padding: null,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                        width: 260,
+                                        child: AutoSizeText(
+                                          "TSAR BOMBA: Luxury automatic waterproof",
+                                          style: GoogleFonts.lato(),
+                                        )),
+                                    AutoSizeText(
+                                      "\$250",
+                                      style: GoogleFonts.lato(
+                                          fontWeight: FontWeight.w700),
+                                    )
+                                  ],
+                                ),
+                                ),
+                            SizedBox(height: 20),
+                          ],
                         ),
                       ),
-                      MouseRegion(
-                        onEnter: (value) {
-                          setState(() {
-                            _controller2.forward();
-                          });
-                        },
-                        onExit: (value) {
-                          setState(() {
-                            _controller2.reverse();
-                          });
-                        },
-                        child: ClipRRect(
-                          child: Container(
-                            // clipBehavior: Clip.antiAlias,
-                            height: popImage1height,
-                            width: popImage1width,
-                            transform: Matrix4(
-                                _animation2.value,
-                                0,
-                                0,
-                                0,
-                                0,
-                                _animation2.value,
-                                0,
-                                0,
-                                0,
-                                0,
-                                1,
-                                0,
-                                padding2.value,
-                                padding2.value,
-                                0,
-                                1),
-                            child: Image.asset(
-                              'assets/images/c1.png',
-                              fit: BoxFit.cover,
+                      Container(
+                        width: popImage1width,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MouseRegion(
+                              onEnter: (value) {
+                                setState(() {
+                                  _controller2.forward();
+                                });
+                              },
+                              onExit: (value) {
+                                setState(() {
+                                  _controller2.reverse();
+                                });
+                              },
+                              child: ClipRRect(
+                                child: Container(
+                                  // clipBehavior: Clip.antiAlias,
+                                  height: popImage1height,
+                                  width: popImage1width,
+                                  transform: Matrix4(
+                                      _animation2.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      _animation2.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      padding2.value,
+                                      padding2.value,
+                                      0,
+                                      1),
+                                  child: Image.asset(
+                                    'assets/images/c1.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(height: 20),
+                            Container(
+                              width: 250,
+                              padding: null,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width: 260,
+                                      child: AutoSizeText(
+                                        "JBW: Platinum drip",
+                                        style: GoogleFonts.lato(),
+                                      )),
+                                  AutoSizeText(
+                                    "\$480",
+                                    style: GoogleFonts.lato(
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                          ],
                         ),
                       ),
-                      MouseRegion(
-                        onEnter: (value) {
-                          setState(() {
-                            _controller3.forward();
-                          });
-                        },
-                        onExit: (value) {
-                          setState(() {
-                            _controller3.reverse();
-                          });
-                        },
-                        child: ClipRRect(
-                          child: Container(
-                            // clipBehavior: Clip.antiAlias,
-                            height: popImage1height,
-                            width: popImage1width,
-                            transform: Matrix4(
-                                _animation3.value,
-                                0,
-                                0,
-                                0,
-                                0,
-                                _animation3.value,
-                                0,
-                                0,
-                                0,
-                                0,
-                                1,
-                                0,
-                                padding3.value,
-                                padding3.value,
-                                0,
-                                1),
-                            child: Image.asset(
-                              'assets/images/c2.png',
-                              fit: BoxFit.cover,
+                      Container(
+                        width: popImage1width,
+                        child: Column(
+                          children: [
+                            MouseRegion(
+                              onEnter: (value) {
+                                setState(() {
+                                  _controller3.forward();
+                                });
+                              },
+                              onExit: (value) {
+                                setState(() {
+                                  _controller3.reverse();
+                                });
+                              },
+                              child: ClipRRect(
+                                child: Container(
+                                  // clipBehavior: Clip.antiAlias,
+                                  height: popImage1height,
+                                  width: popImage1width,
+                                  transform: Matrix4(
+                                      _animation3.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      _animation3.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      padding3.value,
+                                      padding3.value,
+                                      0,
+                                      1),
+                                  child: Image.asset(
+                                    'assets/images/c2.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(height: 20),
+                            Container(
+                              width: 250,
+                              padding: null,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width: 260,
+                                      child: AutoSizeText(
+                                        "OLEV: Black diamond",
+                                        style: GoogleFonts.lato(),
+                                      )),
+                                  AutoSizeText(
+                                    "\$650",
+                                    style: GoogleFonts.lato(
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                          ],
                         ),
                       ),
-                      MouseRegion(
-                        onEnter: (value) {
-                          setState(() {
-                            _controller4.forward();
-                          });
-                        },
-                        onExit: (value) {
-                          setState(() {
-                            _controller4.reverse();
-                          });
-                        },
-                        child: ClipRRect(
-                          child: Container(
-                            // clipBehavior: Clip.antiAlias,
-                            height: popImage1height,
-                            width: popImage1width,
-                            transform: Matrix4(
-                                _animation4.value,
-                                0,
-                                0,
-                                0,
-                                0,
-                                _animation4.value,
-                                0,
-                                0,
-                                0,
-                                0,
-                                1,
-                                0,
-                                padding4.value,
-                                padding4.value,
-                                0,
-                                1),
-                            child: Image.asset(
-                              'assets/images/c3.png',
-                              fit: BoxFit.cover,
+                      Container(
+                        width: popImage1width,
+                        child: Column(
+                          children: [
+                            MouseRegion(
+                              onEnter: (value) {
+                                setState(() {
+                                  _controller4.forward();
+                                });
+                              },
+                              onExit: (value) {
+                                setState(() {
+                                  _controller4.reverse();
+                                });
+                              },
+                              child: ClipRRect(
+                                child: Container(
+                                  // clipBehavior: Clip.antiAlias,
+                                  height: popImage1height,
+                                  width: popImage1width,
+                                  transform: Matrix4(
+                                      _animation4.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      _animation4.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      padding4.value,
+                                      padding4.value,
+                                      0,
+                                      1),
+                                  child: Image.asset(
+                                    'assets/images/c3.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(height: 20),
+                            Container(
+                              width: 250,
+                              padding: null,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width: 260,
+                                      child: AutoSizeText(
+                                        "DIELLA: Luminous automatic waterproof",
+                                        style: GoogleFonts.lato(),
+                                      )),
+                                  AutoSizeText(
+                                    "\$220",
+                                    style: GoogleFonts.lato(
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                          ],
                         ),
                       ),
                     ],
+                  ),
+                  //SECOND TWO WRAP
+                  SizedBox(height: 100),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: Wrap(
+                      direction: Axis.horizontal,
+                      children: [
+                        Container(
+                          height: 500,
+                          width: MediaQuery.of(context).size.width < 1000
+                              ? MediaQuery.of(context).size.width
+                              : MediaQuery.of(context).size.width * 0.5,
+                          color: const Color(0xff9eabb0),
+                          child: Image.asset(
+                            'assets/images/w5.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Container(
+                          height: MediaQuery.of(context).size.width < 1000
+                              ? 300
+                              : 500,
+                          width: MediaQuery.of(context).size.width < 1000
+                              ? MediaQuery.of(context).size.width
+                              : MediaQuery.of(context).size.width * 0.5,
+                          color: const Color(0xffe8ddd4),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Padding(
+                                    padding: EdgeInsets.symmetric(vertical:10.0),
+                                    child: AutoSizeText("WARM WEATHER EDIT"),
+                                  ),
+                                   SizedBox(
+                                    width: 300,
+                                    height: 80,
+                                    child:
+                                    AutoSizeText('New in for spring',
+                                        style: GoogleFonts.merriweather(fontSize: 70) ,
+                                        textAlign: TextAlign.left),
+                                  ),
+                                  const Text(
+                                      'Be the first out in the wild with our award-winning accessories \n'
+                                          'now available in stores',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                      ),
+                                      textAlign: TextAlign.left),
+                                  const SizedBox(height: 20),
+                                  MouseRegion(
+                                    child: Row(
+                                      children: [
+                                        Text("SHOP NOW", style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
+                                        Icon(Icons.arrow_forward),
+                                      ],
+                                    ),
+                                  )
+                                ]),
+                          ),
+                        )
+                      ],
+                    ),
                   )
+
                 ],
               ),
             ),
