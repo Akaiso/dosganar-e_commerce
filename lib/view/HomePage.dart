@@ -1316,26 +1316,27 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     "- HOT OFF THE PRESS -",
                     style: TextStyle(fontSize: 20),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
                           onTap: () {
                             carouselController.previousPage(
-                                duration: Duration(milliseconds: 600));
+                                duration: const Duration(milliseconds: 600));
                           },
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 10.0, vertical: 30),
                             child: Icon(Icons.arrow_back),
                           )),
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.9,
+                        width: MediaQuery.of(context).size.width * 0.8,
                         child: CarouselSlider(
                             carouselController: carouselController,
                             items: items2,
                             options: CarouselOptions(
+                              viewportFraction: 1,
                                 onPageChanged: (index, reason) {
                                   setState(() {
                                     currentIndex = index;
@@ -1347,15 +1348,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 height: MediaQuery.of(context).size.width < 1000
                                     ? MediaQuery.of(context).size.height * 0.7
                                     : MediaQuery.of(context).size.height *
-                                        0.4)),
+                                        0.6)),
                       ),
                       InkWell(
                           onTap: () {
                             carouselController.nextPage(
-                                duration: Duration(milliseconds: 600));
+                                duration: const Duration(milliseconds: 600));
                           },
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 10.0, vertical: 30),
                             child: Icon(Icons.arrow_forward),
                           ))
