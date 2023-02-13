@@ -1,9 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utilities.dart';
-import '../widgets/Widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -40,6 +40,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late AnimationController _controller4;
   late Animation _animation4;
   late Animation padding4;
+  late AnimationController _controller5;
+  late Animation _animation5;
+  late Animation padding5;
+  late AnimationController _controller6;
+  late Animation _animation6;
+  late Animation padding6;
+  late AnimationController _controller7;
+  late Animation _animation7;
+  late Animation padding7;
+  late AnimationController _controller8;
+  late Animation _animation8;
+  late Animation padding8;
 
   @override
   void initState() {
@@ -63,6 +75,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 275),
       vsync: this,
     );
+    _controller5 = AnimationController(
+      duration: const Duration(milliseconds: 275),
+      vsync: this,
+    );
+    _controller6 = AnimationController(
+      duration: const Duration(milliseconds: 275),
+      vsync: this,
+    );
+    _controller7 = AnimationController(
+      duration: const Duration(milliseconds: 275),
+      vsync: this,
+    );
+    _controller8 = AnimationController(
+      duration: const Duration(milliseconds: 275),
+      vsync: this,
+    );
 
     _animation = Tween(begin: 1.0, end: 1.2)
         .animate(CurvedAnimation(parent: _controller, curve: Curves.ease));
@@ -72,6 +100,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         .animate(CurvedAnimation(parent: _controller3, curve: Curves.ease));
     _animation4 = Tween(begin: 1.0, end: 1.2)
         .animate(CurvedAnimation(parent: _controller4, curve: Curves.ease));
+    _animation5 = Tween(begin: 1.0, end: 1.2)
+        .animate(CurvedAnimation(parent: _controller5, curve: Curves.ease));
+    _animation6 = Tween(begin: 1.0, end: 1.2)
+        .animate(CurvedAnimation(parent: _controller6, curve: Curves.ease));
+    _animation7 = Tween(begin: 1.0, end: 1.2)
+        .animate(CurvedAnimation(parent: _controller7, curve: Curves.ease));
+    _animation8 = Tween(begin: 1.0, end: 1.2)
+        .animate(CurvedAnimation(parent: _controller8, curve: Curves.ease));
 
     padding = Tween(begin: 0.0, end: -25.0)
         .animate(CurvedAnimation(parent: _controller, curve: Curves.ease));
@@ -81,6 +117,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         .animate(CurvedAnimation(parent: _controller3, curve: Curves.ease));
     padding4 = Tween(begin: 0.0, end: -25.0)
         .animate(CurvedAnimation(parent: _controller4, curve: Curves.ease));
+    padding5 = Tween(begin: 0.0, end: -25.0)
+        .animate(CurvedAnimation(parent: _controller5, curve: Curves.ease));
+    padding6 = Tween(begin: 0.0, end: -25.0)
+        .animate(CurvedAnimation(parent: _controller6, curve: Curves.ease));
+    padding7 = Tween(begin: 0.0, end: -25.0)
+        .animate(CurvedAnimation(parent: _controller7, curve: Curves.ease));
+    padding8 = Tween(begin: 0.0, end: -25.0)
+        .animate(CurvedAnimation(parent: _controller8, curve: Curves.ease));
 
     _controller.addListener(() {
       setState(() {});
@@ -92,6 +136,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       setState(() {});
     });
     _controller4.addListener(() {
+      setState(() {});
+    });
+    _controller5.addListener(() {
+      setState(() {});
+    });
+    _controller6.addListener(() {
+      setState(() {});
+    });
+    _controller7.addListener(() {
+      setState(() {});
+    });
+    _controller8.addListener(() {
       setState(() {});
     });
   }
@@ -106,8 +162,95 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     const Text('Fund your wallet unlock irresistible offers',
         style: TextStyle(fontSize: 14, color: Colors.black))
   ];
+
+  int currentIndex = 0;
+  CarouselController carouselController = new CarouselController();
+
   @override
   Widget build(BuildContext context) {
+    List<Widget> items2 = [
+      Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width < 800 ? 70 : 130.0),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Container(
+            child: AutoSizeText(
+              "Dosganar prides itself on delivering exceptional customer service and high-quality "
+              "products, resulting in a 100% customer satisfaction rate.",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.merriweather(fontSize: 25),
+            ),
+          ),
+          SizedBox(height: 30),
+          AutoSizeText(
+            "Dosganar: Where quality meets convenience",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.merriweather(),
+          ),
+        ]),
+      ),
+      Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width < 800 ? 70 : 130.0),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Container(
+            child: AutoSizeText(
+              "Dosganar has successfully expanded its reach beyond local boundaries, establishing a "
+              "presence in international markets.",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.merriweather(fontSize: 25),
+            ),
+          ),
+          SizedBox(height: 30),
+          AutoSizeText(
+            "Dosganar: Experience the Difference with Dosganar",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.merriweather(),
+          ),
+        ]),
+      ),
+      Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width < 800 ? 70 : 130.0),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Container(
+            child: AutoSizeText(
+              "Through personalized shopping experiences, timely delivery, and responsive support, "
+              "Dosganar has earned the trust and satisfaction of its customers",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.merriweather(fontSize: 25),
+            ),
+          ),
+          SizedBox(height: 30),
+          AutoSizeText(
+            "Shop Smarter, Shop Dosganar",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.merriweather(),
+          ),
+        ]),
+      ),
+      Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width < 800 ? 70 : 130.0),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Container(
+            child: AutoSizeText(
+              "Dosganar has successfully expanded its reach beyond local boundaries, establishing a "
+              "presence in international markets.",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.merriweather(fontSize: 25),
+            ),
+          ),
+          SizedBox(height: 30),
+          AutoSizeText(
+            "Dosganar: Curated Excellence, Delivered to Your Door",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.merriweather(),
+          ),
+        ]),
+      ),
+    ];
+
     return DefaultTabController(
         length: 4,
         child: Scaffold(
@@ -403,7 +546,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           width: MediaQuery.of(context).size.width < 1000
                               ? MediaQuery.of(context).size.width
                               : MediaQuery.of(context).size.width * 0.5,
-                          color: const Color(0xffddcec0),   //(0x0ff7f1eb),
+                          color: const Color(0xffddcec0), //(0x0ff7f1eb),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Column(
@@ -464,6 +607,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       ],
                     ),
                   ),
+
+                  ///Caveat in black background
                   Container(
                     color: Colors.black,
                     width: MediaQuery.of(context).size.width,
@@ -509,6 +654,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     style: TextStyle(fontSize: 50, letterSpacing: 2),
                   ),
                   const SizedBox(height: 50),
+
+                  ///Images with zoom animation
                   Wrap(
                     direction: Axis.horizontal,
                     children: [
@@ -559,25 +706,25 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                             SizedBox(height: 20),
                             Container(
-                                width: 250,
-                                padding: null,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                        width: 260,
-                                        child: AutoSizeText(
-                                          "TSAR BOMBA: Luxury automatic waterproof",
-                                          style: GoogleFonts.lato(),
-                                        )),
-                                    AutoSizeText(
-                                      "\$250",
-                                      style: GoogleFonts.lato(
-                                          fontWeight: FontWeight.w700),
-                                    )
-                                  ],
-                                ),
-                                ),
+                              width: 250,
+                              padding: null,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width: 260,
+                                      child: AutoSizeText(
+                                        "TSAR BOMBA: Luxury automatic waterproof",
+                                        style: GoogleFonts.lato(),
+                                      )),
+                                  AutoSizeText(
+                                    "\$250",
+                                    style: GoogleFonts.lato(
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
+                              ),
+                            ),
                             SizedBox(height: 20),
                           ],
                         ),
@@ -792,7 +939,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       ),
                     ],
                   ),
-                  //SECOND TWO WRAP
+
+                  ///SECOND TWO WRAP
                   SizedBox(height: 100),
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
@@ -819,26 +967,28 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               : MediaQuery.of(context).size.width * 0.5,
                           color: const Color(0xffe8ddd4),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 30.0),
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const Padding(
-                                    padding: EdgeInsets.symmetric(vertical:10.0),
+                                    padding:
+                                        EdgeInsets.symmetric(vertical: 10.0),
                                     child: AutoSizeText("WARM WEATHER EDIT"),
                                   ),
-                                   SizedBox(
+                                  SizedBox(
                                     width: 300,
                                     height: 80,
-                                    child:
-                                    AutoSizeText('New in for spring',
-                                        style: GoogleFonts.merriweather(fontSize: 70) ,
+                                    child: AutoSizeText('New in for spring',
+                                        style: GoogleFonts.merriweather(
+                                            fontSize: 70),
                                         textAlign: TextAlign.left),
                                   ),
                                   const Text(
                                       'Be the first out in the wild with our award-winning accessories \n'
-                                          'now available in stores',
+                                      'now available in stores',
                                       style: TextStyle(
                                         fontSize: 15,
                                       ),
@@ -846,8 +996,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   const SizedBox(height: 20),
                                   MouseRegion(
                                     child: Row(
-                                      children: [
-                                        Text("SHOP NOW", style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
+                                      children: const [
+                                        Text(
+                                          "SHOP NOW",
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w600),
+                                        ),
                                         Icon(Icons.arrow_forward),
                                       ],
                                     ),
@@ -857,8 +1012,397 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         )
                       ],
                     ),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Text(
+                    'Pack your',
+                    style: GoogleFonts.allura(
+                        textStyle: const TextStyle(
+                      fontSize: 30,
+                    )),
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'BAGS',
+                    style: TextStyle(fontSize: 50, letterSpacing: 2),
+                  ),
+                  const SizedBox(height: 50),
+                  Wrap(
+                    children: [
+                      Container(
+                        width: popImage1width,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MouseRegion(
+                              onEnter: (value) {
+                                setState(() {
+                                  _controller.forward();
+                                });
+                              },
+                              onExit: (value) {
+                                setState(() {
+                                  _controller.reverse();
+                                });
+                              },
+                              child: ClipRRect(
+                                child: Container(
+                                  // clipBehavior: Clip.antiAlias,
+                                  height: popImage1height,
+                                  width: popImage1width,
+                                  transform: Matrix4(
+                                      _animation.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      _animation.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      padding.value,
+                                      padding.value,
+                                      0,
+                                      1),
+                                  child: Image.asset(
+                                    'assets/images/apblue.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Container(
+                              width: 250,
+                              padding: null,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width: 260,
+                                      child: AutoSizeText(
+                                        "TSAR BOMBA: Luxury automatic waterproof",
+                                        style: GoogleFonts.lato(),
+                                      )),
+                                  AutoSizeText(
+                                    "\$250",
+                                    style: GoogleFonts.lato(
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: popImage1width,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MouseRegion(
+                              onEnter: (value) {
+                                setState(() {
+                                  _controller2.forward();
+                                });
+                              },
+                              onExit: (value) {
+                                setState(() {
+                                  _controller2.reverse();
+                                });
+                              },
+                              child: ClipRRect(
+                                child: Container(
+                                  // clipBehavior: Clip.antiAlias,
+                                  height: popImage1height,
+                                  width: popImage1width,
+                                  transform: Matrix4(
+                                      _animation2.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      _animation2.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      padding2.value,
+                                      padding2.value,
+                                      0,
+                                      1),
+                                  child: Image.asset(
+                                    'assets/images/c1.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Container(
+                              width: 250,
+                              padding: null,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width: 260,
+                                      child: AutoSizeText(
+                                        "JBW: Platinum drip",
+                                        style: GoogleFonts.lato(),
+                                      )),
+                                  AutoSizeText(
+                                    "\$480",
+                                    style: GoogleFonts.lato(
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: popImage1width,
+                        child: Column(
+                          children: [
+                            MouseRegion(
+                              onEnter: (value) {
+                                setState(() {
+                                  _controller3.forward();
+                                });
+                              },
+                              onExit: (value) {
+                                setState(() {
+                                  _controller3.reverse();
+                                });
+                              },
+                              child: ClipRRect(
+                                child: Container(
+                                  // clipBehavior: Clip.antiAlias,
+                                  height: popImage1height,
+                                  width: popImage1width,
+                                  transform: Matrix4(
+                                      _animation3.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      _animation3.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      padding3.value,
+                                      padding3.value,
+                                      0,
+                                      1),
+                                  child: Image.asset(
+                                    'assets/images/c2.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Container(
+                              width: 250,
+                              padding: null,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width: 260,
+                                      child: AutoSizeText(
+                                        "OLEV: Black diamond",
+                                        style: GoogleFonts.lato(),
+                                      )),
+                                  AutoSizeText(
+                                    "\$650",
+                                    style: GoogleFonts.lato(
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: popImage1width,
+                        child: Column(
+                          children: [
+                            MouseRegion(
+                              onEnter: (value) {
+                                setState(() {
+                                  _controller4.forward();
+                                });
+                              },
+                              onExit: (value) {
+                                setState(() {
+                                  _controller4.reverse();
+                                });
+                              },
+                              child: ClipRRect(
+                                child: Container(
+                                  // clipBehavior: Clip.antiAlias,
+                                  height: popImage1height,
+                                  width: popImage1width,
+                                  transform: Matrix4(
+                                      _animation4.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      _animation4.value,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      padding4.value,
+                                      padding4.value,
+                                      0,
+                                      1),
+                                  child: Image.asset(
+                                    'assets/images/c3.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Container(
+                              width: 250,
+                              padding: null,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width: 260,
+                                      child: AutoSizeText(
+                                        "DIELLA: Luminous automatic waterproof",
+                                        style: GoogleFonts.lato(),
+                                      )),
+                                  AutoSizeText(
+                                    "\$220",
+                                    style: GoogleFonts.lato(
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 80),
+                  const Text(
+                    "- HOT OFF THE PRESS -",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            carouselController.previousPage(
+                                duration: Duration(milliseconds: 600));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10.0, vertical: 30),
+                            child: Icon(Icons.arrow_back),
+                          )),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        child: CarouselSlider(
+                            carouselController: carouselController,
+                            items: items2,
+                            options: CarouselOptions(
+                                onPageChanged: (index, reason) {
+                                  setState(() {
+                                    currentIndex = index;
+                                  });
+                                  currentIndex = index;
+                                },
+                                // viewportFraction: 0.9,
+                                //autoPlay: true,
+                                height: MediaQuery.of(context).size.width < 1000
+                                    ? MediaQuery.of(context).size.height * 0.7
+                                    : MediaQuery.of(context).size.height *
+                                        0.4)),
+                      ),
+                      InkWell(
+                          onTap: () {
+                            carouselController.nextPage(
+                                duration: Duration(milliseconds: 600));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10.0, vertical: 30),
+                            child: Icon(Icons.arrow_forward),
+                          ))
+                    ],
+                  ),
+                  // CarouselSlider(
+                  //     items: items,
+                  //     options: CarouselOptions(
+                  //         height: MediaQuery.of(context).size.height * 0.7)),
 
+                  //FULL SCREEN CAROUSEL
+                  // Container(width: MediaQuery.of(context).size.width,
+                  //   child: Row(
+                  //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //       children: [
+                  //         Icon(Icons.arrow_back),
+                  //         CarouselSlider(items: items2, options: CarouselOptions(
+                  //           height: 400,
+                  //           aspectRatio: 16 / 9,
+                  //           viewportFraction: 0.8,
+                  //           initialPage: 0,
+                  //           enableInfiniteScroll: true,
+                  //           reverse: false,
+                  //           autoPlay: true,
+                  //           autoPlayInterval: const Duration(seconds: 3),
+                  //           autoPlayAnimationDuration:
+                  //           const Duration(milliseconds: 800),
+                  //           autoPlayCurve: Curves.fastOutSlowIn,
+                  //           enlargeCenterPage: true,
+                  //           enlargeFactor: 0.3,
+                  //           //onPageChanged: callbackFunction,
+                  //           scrollDirection: Axis.horizontal,
+                  //         )),
+                  //         Icon(Icons.arrow_forward)
+                  //       ]),
+                  // )
+                  DotsIndicator(
+                      dotsCount: 4,
+                      position: currentIndex,
+                      decorator: const DotsDecorator(
+                        color: Colors.black12,
+                        activeColor: Colors.black,
+                      )),
+                  Container(
+                    color: Colors.yellow,
+                  ),
+                  ListTile(),
                 ],
               ),
             ),
