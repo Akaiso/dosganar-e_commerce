@@ -355,7 +355,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               child: const Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Text(
-                                  'DOGANAR',
+                                  'DOSGANAR',
                                   style: TextStyle(color: Colors.white),
                                 ),
                               ),
@@ -368,7 +368,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   child: const Padding(
                                     padding: EdgeInsets.all(8.0),
                                     child: Text(
-                                      'DOGANAR',
+                                      'DOSGANAR',
                                       style: TextStyle(color: Colors.white),
                                     ),
                                   ),
@@ -1336,7 +1336,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             carouselController: carouselController,
                             items: items2,
                             options: CarouselOptions(
-                              viewportFraction: 1,
+                                viewportFraction: 1,
                                 onPageChanged: (index, reason) {
                                   setState(() {
                                     currentIndex = index;
@@ -1362,37 +1362,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ))
                     ],
                   ),
-                  // CarouselSlider(
-                  //     items: items,
-                  //     options: CarouselOptions(
-                  //         height: MediaQuery.of(context).size.height * 0.7)),
-
-                  //FULL SCREEN CAROUSEL
-                  // Container(width: MediaQuery.of(context).size.width,
-                  //   child: Row(
-                  //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  //       children: [
-                  //         Icon(Icons.arrow_back),
-                  //         CarouselSlider(items: items2, options: CarouselOptions(
-                  //           height: 400,
-                  //           aspectRatio: 16 / 9,
-                  //           viewportFraction: 0.8,
-                  //           initialPage: 0,
-                  //           enableInfiniteScroll: true,
-                  //           reverse: false,
-                  //           autoPlay: true,
-                  //           autoPlayInterval: const Duration(seconds: 3),
-                  //           autoPlayAnimationDuration:
-                  //           const Duration(milliseconds: 800),
-                  //           autoPlayCurve: Curves.fastOutSlowIn,
-                  //           enlargeCenterPage: true,
-                  //           enlargeFactor: 0.3,
-                  //           //onPageChanged: callbackFunction,
-                  //           scrollDirection: Axis.horizontal,
-                  //         )),
-                  //         Icon(Icons.arrow_forward)
-                  //       ]),
-                  // )
                   DotsIndicator(
                       dotsCount: 4,
                       position: currentIndex,
@@ -1401,9 +1370,253 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         activeColor: Colors.black,
                       )),
                   Container(
+                    height: 50,
                     color: Colors.yellow,
                   ),
-                  ListTile(),
+                  Wrap(
+                    spacing: 20,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Container(
+                          width: popImage1width,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              MouseRegion(
+                                onEnter: (value) {
+                                  setState(() {
+                                    _controller2.forward();
+                                  });
+                                },
+                                onExit: (value) {
+                                  setState(() {
+                                    _controller2.reverse();
+                                  });
+                                },
+                                child: ClipRRect(
+                                  child: Container(
+                                    // clipBehavior: Clip.antiAlias,
+                                    height: popImage1height,
+                                    width: popImage1width,
+                                    transform: Matrix4(
+                                        _animation2.value,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        _animation2.value,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        padding2.value,
+                                        padding2.value,
+                                        0,
+                                        1),
+                                    child: Image.asset(
+                                      'assets/images/c1.png',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              Container(
+                                width: 250,
+                                padding: null,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                        width: 260,
+                                        child: AutoSizeText(
+                                          "ICONIC WRIST WATCHES",
+                                          style: GoogleFonts.lato(
+                                              fontWeight: FontWeight.w700),
+                                        )),
+                                    SizedBox(height: 20),
+                                    AutoSizeText(
+                                      "Elevate your style with our exquisite collection of luxury wristwatches, meticulously crafted for the discerning connoisseur",
+                                      style: GoogleFonts.lato(),
+                                    ),
+                                    SizedBox(height: 30),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 50),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Container(
+                          width: popImage1width,
+                          child: Column(
+                            children: [
+                              Container(
+                                height:100,
+                                child: Column(
+                                  children: [
+                                    AutoSizeText("Life Style", style: GoogleFonts.merriweather(fontSize: 14)),
+                                    AutoSizeText("ESSENTIALS", style: TextStyle(fontSize: 50))
+                                  ]
+                                )
+                              ),
+                              MouseRegion(
+                                onEnter: (value) {
+                                  setState(() {
+                                    _controller3.forward();
+                                  });
+                                },
+                                onExit: (value) {
+                                  setState(() {
+                                    _controller3.reverse();
+                                  });
+                                },
+                                child: ClipRRect(
+                                  child: Container(
+                                    // clipBehavior: Clip.antiAlias,
+                                    height: popImage1height,
+                                    width: popImage1width,
+                                    transform: Matrix4(
+                                        _animation3.value,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        _animation3.value,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        padding3.value,
+                                        padding3.value,
+                                        0,
+                                        1),
+                                    child: Image.asset(
+                                      'assets/images/c2.png',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              Container(
+                                width: 250,
+                                padding: null,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                        width: 260,
+                                        child: AutoSizeText(
+                                          "BANTY WARDS",
+                                          style: GoogleFonts.lato(
+                                              fontWeight: FontWeight.w700),
+                                        )),
+                                    SizedBox(height: 20),
+                                    Container(
+                                      width: 260,
+                                      child: AutoSizeText(
+                                        "Indulge in timeless elegance and sophistication with our range of luxury "
+                                            "timepieces, where every detail speaks of unparalleled craftsmanship and prestige",
+                                        style: GoogleFonts.lato(),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Container(
+                          width: popImage1width,
+                          child: Column(
+                            children: [
+                              MouseRegion(
+                                onEnter: (value) {
+                                  setState(() {
+                                    _controller4.forward();
+                                  });
+                                },
+                                onExit: (value) {
+                                  setState(() {
+                                    _controller4.reverse();
+                                  });
+                                },
+                                child: ClipRRect(
+                                  child: Container(
+                                    // clipBehavior: Clip.antiAlias,
+                                    height: popImage1height,
+                                    width: popImage1width,
+                                    transform: Matrix4(
+                                        _animation4.value,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        _animation4.value,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        padding4.value,
+                                        padding4.value,
+                                        0,
+                                        1),
+                                    child: Image.asset(
+                                      'assets/images/c3.png',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              Container(
+                                width: 250,
+                                padding: null,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                        width: 260,
+                                        child: AutoSizeText(
+                                          "DIELLA: Luminous automatic waterproof",
+                                          style: GoogleFonts.lato(
+                                              fontWeight: FontWeight.w700),
+                                        )),
+                                    SizedBox(height: 20),
+                                    AutoSizeText(
+                                      "Experience the epitome of luxury and precision with our exclusive selection "
+                                          "of wristwatches, curated for those who appreciate the finer things in life.",
+                                      style: GoogleFonts.lato(),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    height: 100,
+                    color: Colors.black,
+                  ),
                 ],
               ),
             ),
