@@ -6,7 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utilities.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+   HomePage({Key? key}) : super(key: key);
+
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -53,9 +54,26 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late Animation _animation8;
   late Animation padding8;
 
+  late final ScrollController scrollController1 ;
+  late final ScrollController scrollController2 ;
+
+
   @override
   void initState() {
     super.initState();
+    scrollController1 = ScrollController()..addListener(() {syncScroll();});
+    scrollController2 = ScrollController();
+
+    // setState(() {
+    //   scrollController1.addListener(() {
+    //     syncScroll();
+    //     // scrollController2.animateTo(scrollController1.offset,
+    //     //     duration: Duration(milliseconds: 50000), curve: Curves.linear);
+    //   });
+    // });
+
+
+
     _controller = AnimationController(
       duration: const Duration(milliseconds: 275),
       vsync: this,
@@ -150,6 +168,26 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     _controller8.addListener(() {
       setState(() {});
     });
+  }
+
+
+
+  @override
+  void dispose() {
+    scrollController1.dispose();
+    scrollController2.dispose();
+    super.dispose();
+  }
+
+  void syncScroll(){
+    if(!mounted) return;
+    if(scrollController2.hasClients){
+      final verticalOffset = scrollController1.offset;
+      final horizontalTarget = (verticalOffset / scrollController1.position.maxScrollExtent)*
+    scrollController2.position.maxScrollExtent;
+      scrollController2.jumpTo(horizontalTarget);
+    }
+
   }
 
   List<Widget> items = [
@@ -520,8 +558,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               )
             ],
             body: SingleChildScrollView(
+              controller: scrollController1,
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
@@ -1369,17 +1407,32 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         color: Colors.black12,
                         activeColor: Colors.black,
                       )),
+
                   Container(
                     height: 50,
-                    color: Colors.yellow,
                   ),
+
+                  ///zoom animated images with labels and Heading
                   Wrap(
-                    spacing: 20,
                     children: [
+                      MediaQuery.of(context).size.width < 1000
+                          ? Container(
+                              height: 100,
+                              width: MediaQuery.of(context).size.width,
+                              child: Column(children: [
+                                AutoSizeText("Life Style",
+                                    style:
+                                        GoogleFonts.merriweather(fontSize: 14)),
+                                AutoSizeText("ESSENTIALS",
+                                    style: TextStyle(fontSize: 50))
+                              ]))
+                          : FittedBox(), //using a FittedBox so it fills whatever space the Wrap widget will give. Containr() won't work.
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Container(
-                          width: popImage1width,
+                          width: MediaQuery.of(context).size.width < 1000
+                              ? MediaQuery.of(context).size.width
+                              : popImage1width,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -1398,7 +1451,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   child: Container(
                                     // clipBehavior: Clip.antiAlias,
                                     height: popImage1height,
-                                    width: popImage1width,
+                                    width:
+                                        MediaQuery.of(context).size.width < 1000
+                                            ? MediaQuery.of(context).size.width
+                                            : popImage1width,
                                     transform: Matrix4(
                                         _animation2.value,
                                         0,
@@ -1426,12 +1482,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               SizedBox(height: 20),
                               Container(
                                 width: 250,
-                                padding: null,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                        width: 260,
+                                        width: 250,
                                         child: AutoSizeText(
                                           "ICONIC WRIST WATCHES",
                                           style: GoogleFonts.lato(
@@ -1454,18 +1509,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Container(
-                          width: popImage1width,
+                          width: MediaQuery.of(context).size.width < 1000
+                              ? MediaQuery.of(context).size.width
+                              : popImage1width,
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                height:100,
-                                child: Column(
-                                  children: [
-                                    AutoSizeText("Life Style", style: GoogleFonts.merriweather(fontSize: 14)),
-                                    AutoSizeText("ESSENTIALS", style: TextStyle(fontSize: 50))
-                                  ]
-                                )
-                              ),
+                              MediaQuery.of(context).size.width < 1000
+                                  ? Container()
+                                  : Container(
+                                      height: 100,
+                                      child: Column(children: [
+                                        AutoSizeText("Life Style",
+                                            style: GoogleFonts.merriweather(
+                                                fontSize: 14)),
+                                        AutoSizeText("ESSENTIALS",
+                                            style: TextStyle(fontSize: 50))
+                                      ])),
                               MouseRegion(
                                 onEnter: (value) {
                                   setState(() {
@@ -1481,7 +1541,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   child: Container(
                                     // clipBehavior: Clip.antiAlias,
                                     height: popImage1height,
-                                    width: popImage1width,
+                                    width:
+                                        MediaQuery.of(context).size.width < 1000
+                                            ? MediaQuery.of(context).size.width
+                                            : popImage1width,
                                     transform: Matrix4(
                                         _animation3.value,
                                         0,
@@ -1525,7 +1588,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       width: 260,
                                       child: AutoSizeText(
                                         "Indulge in timeless elegance and sophistication with our range of luxury "
-                                            "timepieces, where every detail speaks of unparalleled craftsmanship and prestige",
+                                        "timepieces, where every detail speaks of unparalleled craftsmanship and prestige",
                                         style: GoogleFonts.lato(),
                                       ),
                                     )
@@ -1540,8 +1603,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Container(
-                          width: popImage1width,
+                          width: MediaQuery.of(context).size.width < 1000
+                              ? MediaQuery.of(context).size.width
+                              : popImage1width,
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               MouseRegion(
                                 onEnter: (value) {
@@ -1558,7 +1624,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   child: Container(
                                     // clipBehavior: Clip.antiAlias,
                                     height: popImage1height,
-                                    width: popImage1width,
+                                    width:
+                                        MediaQuery.of(context).size.width < 1000
+                                            ? MediaQuery.of(context).size.width
+                                            : popImage1width,
                                     transform: Matrix4(
                                         _animation4.value,
                                         0,
@@ -1600,7 +1669,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     SizedBox(height: 20),
                                     AutoSizeText(
                                       "Experience the epitome of luxury and precision with our exclusive selection "
-                                          "of wristwatches, curated for those who appreciate the finer things in life.",
+                                      "of wristwatches, curated for those who appreciate the finer things in life.",
                                       style: GoogleFonts.lato(),
                                     )
                                   ],
@@ -1610,12 +1679,36 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
+                  SingleChildScrollView(
+                    reverse: true,
+                    controller: scrollController2,
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children:   [
+                        Container(
+                          height: 30,
+                          color: Colors.black,
+                          child: const Center(
+                            child: Text("DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                                "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR "
+                                "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                                "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                                "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                                , style: TextStyle(color: Colors.white),),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   Container(
-                    height: 100,
-                    color: Colors.black,
+                    height: 1000,
+                    color: Colors.white,
                   ),
                 ],
               ),
