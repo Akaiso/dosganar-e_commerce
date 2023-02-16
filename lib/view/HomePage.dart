@@ -1693,14 +1693,106 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           color: Colors.black,
                           child: const Center(
                             child: Text("DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR "
+                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR "
                                 "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
                                 " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
                                 " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
                                 " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
                                 , style: TextStyle(color: Colors.white),),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: Wrap(
+                      direction: Axis.horizontal,
+                      verticalDirection: VerticalDirection.up,
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.width < 1000
+                              ? 300
+                              : 500,
+                          width: MediaQuery.of(context).size.width < 1000
+                              ? MediaQuery.of(context).size.width
+                              : MediaQuery.of(context).size.width * 0.3,
+                          color: const Color(0xffe8ddd4),
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.symmetric(horizontal: 30.0),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                   Padding(
+                                    padding:
+                                    EdgeInsets.symmetric(vertical: 10.0),
+                                    child: DropdownButton(items: [
+                                     // List<DropdownMenuItem> items3 = [],
+                                      DropdownMenuItem(child: Text("NYC: NoHo")),
+                                      DropdownMenuItem(child: Text("Austin")),
+                                      DropdownMenuItem(child: Text("Boston: Newbury")),
+                                      DropdownMenuItem(child: Text("Boston: Seaport")),
+                                      DropdownMenuItem(child: Text("San Jose")),
+                                      DropdownMenuItem(child: Text("Seattle")),
+                                      DropdownMenuItem(child: Text("Washington DC")),
+                                      DropdownMenuItem(child: Text("San Francisco")),
+                                      DropdownMenuItem(child: Text("NYC: Williamsburg")),
+                                      DropdownMenuItem(child: Text("London")),
+                                      DropdownMenuItem(child: Text("LA: West Hollywood")),
+                                      DropdownMenuItem(child: Text("LA: Venice Beach")),
+                                      DropdownMenuItem(child: Text("Houston")),
+                                      DropdownMenuItem(child: Text("Dallas")),
+                                      DropdownMenuItem(child: Text("Cicago")),
+
+                                    ], onChanged: (value) {  },
+
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 300,
+                                    height: 80,
+                                    child: AutoSizeText('New in for spring',
+                                        style: GoogleFonts.merriweather(
+                                            fontSize: 70),
+                                        textAlign: TextAlign.left),
+                                  ),
+                                  const Text(
+                                      'Be the first out in the wild with our award-winning accessories \n'
+                                          'now available in stores',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                      ),
+                                      textAlign: TextAlign.left),
+                                  const SizedBox(height: 20),
+                                  MouseRegion(
+                                    child: Row(
+                                      children: const [
+                                        Text(
+                                          "SHOP NOW",
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        Icon(Icons.arrow_forward),
+                                      ],
+                                    ),
+                                  )
+                                ]),
+                          ),
+                        ),
+                        Container(
+                          height: 500,
+                          width: MediaQuery.of(context).size.width < 1000
+                              ? MediaQuery.of(context).size.width
+                              : MediaQuery.of(context).size.width * 0.7,
+                          color: const Color(0xff9eabb0),
+                          child: Image.asset(
+                            'assets/images/w5.png',
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ],
