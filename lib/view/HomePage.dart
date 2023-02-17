@@ -1752,40 +1752,43 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       color: Colors.white,
                                       border: Border.all(),
                                     ),
-                                    child: MediaQuery.of(context).size.width < 1000? Center(
-                                      child: DropdownButton(
-                                        items: items4
-                                            .map((e) => DropdownMenuItem(
-                                            value: e, child: Text(e)))
-                                            .toList(),
-                                        value: dropdownValue,
-                                        onChanged: (value) {
-                                          setState(() {
-                                            dropdownValue = value;
-                                          });
-                                        },
-                                        hint: const Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 20.0),
-                                          child: Text("SELECT A STORE"),
-                                        ),
-                                        isExpanded: true,
-                                      ),
-                                    ) : Center(
-                                      child: DropdownButton(
-                                        items: items4
-                                            .map((e) => DropdownMenuItem(
-                                                value: e, child: Text(e)))
-                                            .toList(),
-                                        value: dropdownValue,
-                                        onChanged: (value) {
-                                          setState(() {
-                                            dropdownValue = value;
-                                          });
-                                        },
-                                        hint: Text("SELECT A STORE"),
-
-                                      ),
-                                    ),
+                                    child: MediaQuery.of(context).size.width <
+                                            1000
+                                        ? Center(
+                                            child: DropdownButton(
+                                              items: items4
+                                                  .map((e) => DropdownMenuItem(
+                                                      value: e, child: Text(e)))
+                                                  .toList(),
+                                              value: dropdownValue,
+                                              onChanged: (value) {
+                                                setState(() {
+                                                  dropdownValue = value;
+                                                });
+                                              },
+                                              hint: const Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 20.0),
+                                                child: Text("SELECT A STORE"),
+                                              ),
+                                              isExpanded: true,
+                                            ),
+                                          )
+                                        : Center(
+                                            child: DropdownButton(
+                                              items: items4
+                                                  .map((e) => DropdownMenuItem(
+                                                      value: e, child: Text(e)))
+                                                  .toList(),
+                                              value: dropdownValue,
+                                              onChanged: (value) {
+                                                setState(() {
+                                                  dropdownValue = value;
+                                                });
+                                              },
+                                              hint: Text("SELECT A STORE"),
+                                            ),
+                                          ),
                                   ),
                                   SizedBox(
                                     width: 300,
@@ -1832,6 +1835,117 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ],
                     ),
+                  ),
+
+                  ///LAST SECTION BEFORE THE FOOTER
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.black,
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    child: MediaQuery.of(context).size.width < 800? Wrap(children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width < 800? MediaQuery.of(context).size.width : 300, //MediaQuery.of(context).size.width * 0.5,
+                        // height: MediaQuery.of(context).size.height * 0.4,
+                        child: const Center(
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+                            child: Text(
+                              "Free shipping on all purchase. Designed by users for users",
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 30),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                            height: MediaQuery.of(context).size.height * 0.4,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(10,0,30,0),
+                              child: Column(
+                                  mainAxisAlignment: MediaQuery.of(context).size.width< 800? MainAxisAlignment.start : MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                        width: 700,
+                                        child: const Text(
+                                            "We want you to love everything about looking Dosganar-which "
+                                                "is why we offer free returns and exchanges on unused items "
+                                                "for the first 100 days.",
+                                            style: TextStyle(
+                                                color: Colors.white))),
+                                    SizedBox(height: 10),
+                                    Row(children: const [
+                                      Text(
+                                        "EXCLUSIONS APPLY.LEARN MORE",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 2.0),
+                                        child: Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ])
+                                  ]),
+                            )),
+                      )
+                    ]) :
+                    Row(children: [
+                      Container(
+                        width: 300, //MediaQuery.of(context).size.width * 0.5,
+                        // height: MediaQuery.of(context).size.height * 0.4,
+                        child: const Center(
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: Text(
+                              "Free shipping on all purchase. Designed by users for users",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 30),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                            height: MediaQuery.of(context).size.height * 0.4,
+                            child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                        width: 700,
+                                        child: const Text(
+                                            "We want you to love everything about looking Dosganar-which "
+                                            "is why we offer free returns and exchanges on unused items "
+                                            "for the first 100 days.",
+                                            style: TextStyle(
+                                                color: Colors.white))),
+                                    SizedBox(height: 10),
+                                    Row(children: const [
+                                      Text(
+                                        "EXCLUSIONS APPLY.LEARN MORE",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 2.0),
+                                        child: Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ])
+                                  ]),
+                            )),
+                      )
+                    ]),
                   ),
                   Container(
                     height: 1000,
