@@ -15,6 +15,19 @@ class Dosganar extends StatelessWidget {
       title: 'DOSGANAR E-COMMERCE',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        colorScheme: const ColorScheme(
+          surface: Colors.black,
+          background: Colors.black,
+          error: Colors.red,
+          brightness: Brightness.light,
+          primary: Colors.black,
+          onPrimary: Colors.black,
+          onBackground: Colors.black,
+          secondary: Colors.black,
+          onError: Colors.red,
+          onSecondary: Colors.black,
+          onSurface: Colors.black,
+        ),
       ),
       home: HomePage(),
     );

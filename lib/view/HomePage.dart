@@ -1951,10 +1951,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             )
                           ]),
                   ),
-                  MediaQuery.of(context).size.width< 1000? Container() :
+                 // MediaQuery.of(context).size.width< 1000? Container() :
                   Container(
                     color: beige,
-                    height: MediaQuery.of(context).size.height * 0.8,
+                    height: MediaQuery.of(context).size.height * 0.7,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                       child: Row(
@@ -1962,9 +1962,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.6,
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(8,0,8,0),
+                              padding: const EdgeInsets.fromLTRB(15,0,35,0),
                               child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.start,
@@ -2004,9 +2003,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                           ),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.6,
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(8,0,8,0),
+                              padding: const EdgeInsets.fromLTRB(15,0,35,0),
                               child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.start,
@@ -2054,9 +2052,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                           ),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.6,
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(8,0,8,0),
+                              padding: const EdgeInsets.fromLTRB(15,0,35,0),
                               child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.start,
@@ -2092,9 +2089,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                           ),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.6,
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(8,0,8,0),
+                              padding: const EdgeInsets.fromLTRB(15,0,35,0),
                               child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.start,
@@ -2114,7 +2110,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                         style: GoogleFonts.inter(
                                             letterSpacing: 1, fontSize: 15)),
                                     const SizedBox(height: 15),
-                                    Container(
+                                    SizedBox(
                                       width: 150,
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.start,
@@ -2135,78 +2131,76 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   ]),
                             ),
                           ),
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.6,
-                            width: MediaQuery.of(context).size.width * 0.29,
-                            child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.29,
-                                    child: AutoSizeText("Sign up for our emails",
-                                        style: GoogleFonts.merriweather(
-                                            fontWeight: FontWeight.w700,
-                                            letterSpacing: 1,
-                                            fontSize: 30)),
-                                  ),
-                                  const SizedBox(height: 15),
-                                  SizedBox(
-                                      width: MediaQuery.of(context).size.width * 0.29,
-                                      child: AutoSizeText(
-                                          "We'll send you updates on our latest launches and more. Need "
-                                          "to take off? Unsubscribe anytime.",
-                                          style: GoogleFonts.inter(
-                                              letterSpacing: 1, fontSize: 15))),
-                                 const SizedBox(height: 15),
-                                  SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.29,
-                                    height: 50,
-                                    child: Expanded(
+                          Flexible(
+
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(15,0,55,0),
+                              child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Flexible(
+
+                                      child: Text("Sign up for our emails",
+                                          style: GoogleFonts.merriweather(
+                                              fontWeight: FontWeight.w700,
+                                              letterSpacing: 1,
+                                              fontSize: 25)),
+                                    ),
+                                    const SizedBox(height: 15),
+                                    Flexible(
+                                       // width: MediaQuery.of(context).size.width * 0.29,
+                                        child: Text(
+                                            "We'll send you updates on our latest \n"
+                                                "launches and more. Need \n"
+                                            "to take off? Unsubscribe anytime.",
+                                            style: GoogleFonts.inter(
+                                                letterSpacing: 1, ),)),
+                                   const SizedBox(height: 15),
+                                    SizedBox(
+                                     //width: MediaQuery.of(context).size.width * 0.29,
+                                     height: 50,
                                       child: Row(
                                         children: [
                                           Flexible(flex: 3,
-                                            child: SizedBox(
-                                                width: MediaQuery.of(context).size.width * 0.28,
-                                              child: TextFormField(
-                                                decoration: const InputDecoration(
-                                                  border: OutlineInputBorder(
-                                                    borderRadius: BorderRadius.all(Radius.circular(0)),
-                                                  ),
-                                                  hintText: "Email address",
-                                                  filled: false,
-                                                  hintStyle:
-                                                      TextStyle(color: Colors.black26),
+                                            child: TextFormField(
+                                              decoration:  InputDecoration(
+                                                focusColor: Colors.black,
+                                                border: OutlineInputBorder(
+                                                  borderRadius: BorderRadius.circular(0),
                                                 ),
+                                                hintText: "Email address",
+                                                filled: false,
+                                                hintStyle:
+                                                    const TextStyle(color: Colors.black26),
                                               ),
                                             ),
                                           ),
-                                          Flexible(flex: 1,
-                                            child: InkWell(
-                                                child: ClipRRect(
-                                                  child: Container(
-                                                    color: Colors.black,
-                                                    height: 50,
-                                                      width: MediaQuery.of(context).size.width * 0.1,
-                                                    child: const Icon(Icons.arrow_forward, color: Colors.white,)
-                                                  ),
-                                                )
-                                            ),
+                                          InkWell(
+                                              child: Flexible(flex: 1,
+                                                child: Container(
+                                                  color: Colors.black,
+                                                  height: 50,
+                                                    width: MediaQuery.of(context).size.width * 0.1,
+                                                  child: const Icon(Icons.arrow_forward, color: Colors.white,)
+                                                ),
+                                              )
                                           )
                                         ],
                                       ),
                                     ),
-                                  ),
-                                ]),
+                                  ]),
+                            ),
                           ),
                         ],
                       ),
                     ),
                   ),
+                  Container(height: 0.4, color: Colors.black),
                   Container(
-                    height: 1000,
-                    color: Colors.white,
+                    height: 150,
+                    color: beige,
                   ),
                 ],
               ),
