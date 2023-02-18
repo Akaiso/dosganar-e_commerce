@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utilities.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -218,7 +218,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   dynamic dropdownValue;
   int currentIndex = 0;
-  CarouselController carouselController = new CarouselController();
+  CarouselController carouselController =  CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -227,15 +227,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width < 800 ? 70 : 130.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Container(
-            child: AutoSizeText(
-              "Dosganar prides itself on delivering exceptional customer service and high-quality "
-              "products, resulting in a 100% customer satisfaction rate.",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.merriweather(fontSize: 25),
-            ),
+          AutoSizeText(
+            "Dosganar prides itself on delivering exceptional customer service and high-quality "
+            "products, resulting in a 100% customer satisfaction rate.",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.merriweather(fontSize: 25),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           AutoSizeText(
             "Dosganar: Where quality meets convenience",
             textAlign: TextAlign.center,
@@ -247,15 +245,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width < 800 ? 70 : 130.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Container(
-            child: AutoSizeText(
-              "Dosganar has successfully expanded its reach beyond local boundaries, establishing a "
-              "presence in international markets.",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.merriweather(fontSize: 25),
-            ),
+          AutoSizeText(
+            "Dosganar has successfully expanded its reach beyond local boundaries, establishing a "
+            "presence in international markets.",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.merriweather(fontSize: 25),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           AutoSizeText(
             "Dosganar: Experience the Difference with Dosganar",
             textAlign: TextAlign.center,
@@ -267,15 +263,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width < 800 ? 70 : 130.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Container(
-            child: AutoSizeText(
-              "Through personalized shopping experiences, timely delivery, and responsive support, "
-              "Dosganar has earned the trust and satisfaction of its customers",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.merriweather(fontSize: 25),
-            ),
+          AutoSizeText(
+            "Through personalized shopping experiences, timely delivery, and responsive support, "
+            "Dosganar has earned the trust and satisfaction of its customers",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.merriweather(fontSize: 25),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           AutoSizeText(
             "Shop Smarter, Shop Dosganar",
             textAlign: TextAlign.center,
@@ -287,15 +281,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width < 800 ? 70 : 130.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Container(
-            child: AutoSizeText(
-              "Dosganar has successfully expanded its reach beyond local boundaries, establishing a "
-              "presence in international markets.",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.merriweather(fontSize: 25),
-            ),
+          AutoSizeText(
+            "Dosganar has successfully expanded its reach beyond local boundaries, establishing a "
+            "presence in international markets.",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.merriweather(fontSize: 25),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           AutoSizeText(
             "Dosganar: Curated Excellence, Delivered to Your Door",
             textAlign: TextAlign.center,
@@ -367,12 +359,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             const SizedBox(width: 80),
                             Text(
                               'Help',
-                              style: Tblack,
+                              style: tblack,
                             ),
                             const SizedBox(width: 40),
                             Text(
                               'Stores',
-                              style: Tblack,
+                              style: tblack,
                             ),
                             const SizedBox(width: 40),
                             const Icon(
@@ -383,7 +375,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             const SizedBox(width: 10),
                             Text(
                               'Earth',
-                              style: Tblack,
+                              style: tblack,
                             ),
                             const SizedBox(width: 40),
                           ],
@@ -673,7 +665,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ? InkWell(
                                 child: Text(
                                 'Restrictions apply.see terms and conditions',
-                                style: Twhite10,
+                                style: twhite10,
                               ))
                             : Text(
                                 '*Offer valid from 10:00 AM ET on 3/28/24 (“Offer Period”) '
@@ -687,7 +679,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 'prohibited by law. The Discount is subject to the complete terms and '
                                 'conditions located at Terms and Conditions.'
                                 '(1)',
-                                style: Twhite10,
+                                style: twhite10,
                               ),
                       ),
                     ),
@@ -713,7 +705,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Wrap(
                     direction: Axis.horizontal,
                     children: [
-                      Container(
+                      SizedBox(
                         width: popImage1width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -758,14 +750,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Container(
                               width: 250,
                               padding: null,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       width: 260,
                                       child: AutoSizeText(
                                         "TSAR BOMBA: Luxury automatic waterproof",
@@ -779,11 +771,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: popImage1width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -828,14 +820,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Container(
                               width: 250,
                               padding: null,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       width: 260,
                                       child: AutoSizeText(
                                         "JBW: Platinum drip",
@@ -849,11 +841,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: popImage1width,
                         child: Column(
                           children: [
@@ -897,14 +889,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Container(
                               width: 250,
                               padding: null,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       width: 260,
                                       child: AutoSizeText(
                                         "OLEV: Black diamond",
@@ -918,11 +910,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: popImage1width,
                         child: Column(
                           children: [
@@ -966,14 +958,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Container(
                               width: 250,
                               padding: null,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       width: 260,
                                       child: AutoSizeText(
                                         "DIELLA: Luminous automatic waterproof",
@@ -987,7 +979,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
@@ -995,7 +987,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ),
 
                   ///SECOND TWO WRAP
-                  SizedBox(height: 100),
+                  const SizedBox(height: 100),
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Wrap(
@@ -1085,7 +1077,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   const SizedBox(height: 50),
                   Wrap(
                     children: [
-                      Container(
+                      SizedBox(
                         width: popImage1width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -1130,14 +1122,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Container(
                               width: 250,
                               padding: null,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       width: 260,
                                       child: AutoSizeText(
                                         "TSAR BOMBA: Luxury automatic waterproof",
@@ -1151,11 +1143,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: popImage1width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -1200,14 +1192,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Container(
                               width: 250,
                               padding: null,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       width: 260,
                                       child: AutoSizeText(
                                         "JBW: Platinum drip",
@@ -1221,11 +1213,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: popImage1width,
                         child: Column(
                           children: [
@@ -1269,14 +1261,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Container(
                               width: 250,
                               padding: null,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       width: 260,
                                       child: AutoSizeText(
                                         "OLEV: Black diamond",
@@ -1290,11 +1282,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: popImage1width,
                         child: Column(
                           children: [
@@ -1338,14 +1330,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Container(
                               width: 250,
                               padding: null,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       width: 260,
                                       child: AutoSizeText(
                                         "DIELLA: Luminous automatic waterproof",
@@ -1359,7 +1351,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
@@ -1384,7 +1376,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 horizontal: 10.0, vertical: 30),
                             child: Icon(Icons.arrow_back),
                           )),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: CarouselSlider(
                             carouselController: carouselController,
@@ -1432,20 +1424,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Wrap(
                     children: [
                       MediaQuery.of(context).size.width < 1000
-                          ? Container(
+                          ? SizedBox(
                               height: 100,
                               width: MediaQuery.of(context).size.width,
                               child: Column(children: [
                                 AutoSizeText("Life Style",
                                     style:
                                         GoogleFonts.merriweather(fontSize: 14)),
-                                AutoSizeText("ESSENTIALS",
+                                const AutoSizeText("ESSENTIALS",
                                     style: TextStyle(fontSize: 50))
                               ]))
-                          : FittedBox(), //using a FittedBox so it fills whatever space the Wrap widget will give. Containr() won't work.
+                          : const FittedBox(), //using a FittedBox so it fills whatever space the Wrap widget will give. Containr() won't work.
                       Padding(
                         padding: const EdgeInsets.all(10.0),
-                        child: Container(
+                        child: SizedBox(
                           width: MediaQuery.of(context).size.width < 1000
                               ? MediaQuery.of(context).size.width
                               : popImage1width,
@@ -1495,36 +1487,36 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 20),
-                              Container(
+                              const SizedBox(height: 20),
+                              SizedBox(
                                 width: 250,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
+                                    SizedBox(
                                         width: 250,
                                         child: AutoSizeText(
                                           "ICONIC WRIST WATCHES",
                                           style: GoogleFonts.lato(
                                               fontWeight: FontWeight.w700),
                                         )),
-                                    SizedBox(height: 20),
+                                    const SizedBox(height: 20),
                                     AutoSizeText(
                                       "Elevate your style with our exquisite collection of luxury wristwatches, meticulously crafted for the discerning connoisseur",
                                       style: GoogleFonts.lato(),
                                     ),
-                                    SizedBox(height: 30),
+                                    const SizedBox(height: 30),
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 50),
+                              const SizedBox(height: 50),
                             ],
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
-                        child: Container(
+                        child: SizedBox(
                           width: MediaQuery.of(context).size.width < 1000
                               ? MediaQuery.of(context).size.width
                               : popImage1width,
@@ -1533,13 +1525,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             children: [
                               MediaQuery.of(context).size.width < 1000
                                   ? Container()
-                                  : Container(
+                                  : SizedBox(
                                       height: 100,
                                       child: Column(children: [
                                         AutoSizeText("Life Style",
                                             style: GoogleFonts.merriweather(
                                                 fontSize: 14)),
-                                        AutoSizeText("ESSENTIALS",
+                                        const AutoSizeText("ESSENTIALS",
                                             style: TextStyle(fontSize: 50))
                                       ])),
                               MouseRegion(
@@ -1585,22 +1577,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 20),
+                              const SizedBox(height: 20),
                               Container(
                                 width: 250,
                                 padding: null,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
+                                    SizedBox(
                                         width: 260,
                                         child: AutoSizeText(
                                           "BANTY WARDS",
                                           style: GoogleFonts.lato(
                                               fontWeight: FontWeight.w700),
                                         )),
-                                    SizedBox(height: 20),
-                                    Container(
+                                    const SizedBox(height: 20),
+                                    SizedBox(
                                       width: 260,
                                       child: AutoSizeText(
                                         "Indulge in timeless elegance and sophistication with our range of luxury "
@@ -1611,14 +1603,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 20),
+                              const SizedBox(height: 20),
                             ],
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
-                        child: Container(
+                        child: SizedBox(
                           width: MediaQuery.of(context).size.width < 1000
                               ? MediaQuery.of(context).size.width
                               : popImage1width,
@@ -1668,21 +1660,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 20),
+                              const SizedBox(height: 20),
                               Container(
                                 width: 250,
                                 padding: null,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
+                                    SizedBox(
                                         width: 260,
                                         child: AutoSizeText(
                                           "DIELLA: Luminous automatic waterproof",
                                           style: GoogleFonts.lato(
                                               fontWeight: FontWeight.w700),
                                         )),
-                                    SizedBox(height: 20),
+                                    const SizedBox(height: 20),
                                     AutoSizeText(
                                       "Experience the epitome of luxury and precision with our exclusive selection "
                                       "of wristwatches, curated for those who appreciate the finer things in life.",
@@ -1691,7 +1683,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 20),
+                              const SizedBox(height: 20),
                             ],
                           ),
                         ),
@@ -1705,19 +1697,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     child: Row(
                       children: [
                         Container(
-                          height: 30,
+                          height: 40,
                           color: Colors.black,
                           child: const Center(
                             child: Text(
-                              "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR "
-                              "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR",
-                              style: TextStyle(color: Colors.white),
+                              "  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE."
+                              ,
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 1.5),
                             ),
                           ),
                         ),
@@ -1786,7 +1773,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   dropdownValue = value;
                                                 });
                                               },
-                                              hint: Text("SELECT A STORE"),
+                                              hint: const Text("SELECT A STORE"),
                                             ),
                                           ),
                                   ),
@@ -1842,110 +1829,380 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     width: MediaQuery.of(context).size.width,
                     color: Colors.black,
                     height: MediaQuery.of(context).size.height * 0.4,
-                    child: MediaQuery.of(context).size.width < 800? Wrap(children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width < 800? MediaQuery.of(context).size.width : 300, //MediaQuery.of(context).size.width * 0.5,
-                        // height: MediaQuery.of(context).size.height * 0.4,
-                        child: const Center(
-                          child: Padding(
-                            padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
-                            child: Text(
-                              "Free shipping on all purchase. Designed by users for users",
-                              style:
-                              TextStyle(color: Colors.white, fontSize: 30),
+                    child: MediaQuery.of(context).size.width < 800
+                        ? Wrap(children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width < 800
+                                  ? MediaQuery.of(context).size.width
+                                  : 300, //MediaQuery.of(context).size.width * 0.5,
+                              // height: MediaQuery.of(context).size.height * 0.4,
+                              child: const Center(
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+                                  child: Text(
+                                    "Free shipping on all purchase. Designed by users for users",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 30),
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: Container(
-                            height: MediaQuery.of(context).size.height * 0.4,
+                            Expanded(
+                              flex: 2,
+                              child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.4,
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(10, 0, 30, 0),
+                                    child: Column(
+                                        mainAxisAlignment:
+                                            MediaQuery.of(context).size.width <
+                                                    800
+                                                ? MainAxisAlignment.start
+                                                : MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const SizedBox(
+                                              width: 700,
+                                              child: AutoSizeText(
+                                                  "We want you to love everything about looking Dosganar-which "
+                                                  "is why we offer free returns and exchanges on unused items "
+                                                  "for the first 100 days.",
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                  ))),
+                                          const SizedBox(height: 10),
+                                          Row(children: const [
+                                            Text(
+                                              "EXCLUSIONS APPLY.LEARN MORE",
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 2.0),
+                                              child: Icon(
+                                                Icons.arrow_forward,
+                                                color: Colors.white,
+                                              ),
+                                            )
+                                          ])
+                                        ]),
+                                  )),
+                            )
+                          ])
+                        : Row(children: [
+                            const SizedBox(
+                              width:
+                                  300, //MediaQuery.of(context).size.width * 0.5,
+                              // height: MediaQuery.of(context).size.height * 0.4,
+                              child: Center(
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                  child: Text(
+                                    "Free shipping on all purchase. Designed by users for users",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 30),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.4,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const SizedBox(
+                                              width: 700,
+                                              child: Text(
+                                                  "We want you to love everything about looking Dosganar-which "
+                                                  "is why we offer free returns and exchanges on unused items "
+                                                  "for the first 100 days.",
+                                                  style: TextStyle(
+                                                      color: Colors.white))),
+                                          const SizedBox(height: 10),
+                                          Row(children: const [
+                                            Text(
+                                              "EXCLUSIONS APPLY.LEARN MORE",
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 2.0),
+                                              child: Icon(
+                                                Icons.arrow_forward,
+                                                color: Colors.white,
+                                              ),
+                                            )
+                                          ])
+                                        ]),
+                                  )),
+                            )
+                          ]),
+                  ),
+                  MediaQuery.of(context).size.width< 1000? Container() :
+                  Container(
+                    color: beige,
+                    height: MediaQuery.of(context).size.height * 0.8,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.6,
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(10,0,30,0),
+                              padding: const EdgeInsets.fromLTRB(8,0,8,0),
                               child: Column(
-                                  mainAxisAlignment: MediaQuery.of(context).size.width< 800? MainAxisAlignment.start : MainAxisAlignment.center,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
-                                        width: 700,
-                                        child: const Text(
-                                            "We want you to love everything about looking Dosganar-which "
-                                                "is why we offer free returns and exchanges on unused items "
-                                                "for the first 100 days.",
-                                            style: TextStyle(
-                                                color: Colors.white))),
-                                    SizedBox(height: 10),
-                                    Row(children: const [
-                                      Text(
-                                        "EXCLUSIONS APPLY.LEARN MORE",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 2.0),
-                                        child: Icon(
-                                          Icons.arrow_forward,
-                                          color: Colors.white,
-                                        ),
-                                      )
-                                    ])
+                                    Text("SHOP",
+                                        style: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w700,
+                                            letterSpacing: 1,
+                                            fontSize: 20)),
+                                    const SizedBox(height: 25),
+                                    Text("Best sellers",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Silver plated",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Gold plated",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Sports",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Leather",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Smart",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+
                                   ]),
-                            )),
-                      )
-                    ]) :
-                    Row(children: [
-                      Container(
-                        width: 300, //MediaQuery.of(context).size.width * 0.5,
-                        // height: MediaQuery.of(context).size.height * 0.4,
-                        child: const Center(
-                          child: Padding(
-                            padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: Text(
-                              "Free shipping on all purchase. Designed by users for users",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 30),
                             ),
                           ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: Container(
-                            height: MediaQuery.of(context).size.height * 0.4,
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.6,
                             child: Padding(
-                              padding: const EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.fromLTRB(8,0,8,0),
                               child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
-                                        width: 700,
-                                        child: const Text(
-                                            "We want you to love everything about looking Dosganar-which "
-                                            "is why we offer free returns and exchanges on unused items "
-                                            "for the first 100 days.",
-                                            style: TextStyle(
-                                                color: Colors.white))),
-                                    SizedBox(height: 10),
-                                    Row(children: const [
-                                      Text(
-                                        "EXCLUSIONS APPLY.LEARN MORE",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 2.0),
-                                        child: Icon(
-                                          Icons.arrow_forward,
-                                          color: Colors.white,
-                                        ),
-                                      )
-                                    ])
+                                    Text("ABOUT",
+                                        style: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w700,
+                                            letterSpacing: 1,
+                                            fontSize: 20)),
+                                    const SizedBox(height: 25),
+                                    Text("The Dosganar difference",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Our story",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Our stores",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Careers",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Impact",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Press",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Refer a friend",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Sustainability",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+
                                   ]),
-                            )),
-                      )
-                    ]),
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.6,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(8,0,8,0),
+                              child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("GET HELP",
+                                        style: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w700,
+                                            letterSpacing: 1,
+                                            fontSize: 20)),
+                                    const SizedBox(height: 25),
+                                    Text("Order tracking",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Make an exchange",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Make a return",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Contact us",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Set my lock",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+
+                                  ]),
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.6,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(8,0,8,0),
+                              child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("FAQS",
+                                        style: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w700,
+                                            letterSpacing: 1,
+                                            fontSize: 20)),
+                                    const SizedBox(height: 25),
+                                    Text("All FAQS",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Text("Warranty and repairs",
+                                        style: GoogleFonts.inter(
+                                            letterSpacing: 1, fontSize: 15)),
+                                    const SizedBox(height: 15),
+                                    Container(
+                                      width: 150,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                       children: const [
+                                         Icon(Icons.ac_unit),
+                                         Padding(
+                                           padding: EdgeInsets.all(8.0),
+                                           child: Icon(Icons.access_time_filled),
+                                         ),
+                                         Icon(Icons.add_a_photo),
+                                         Padding(
+                                           padding: EdgeInsets.all(8.0),
+                                           child: Icon(Icons.add_business),
+                                         ),
+                                       ]
+                                      ),
+                                    )
+                                  ]),
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.6,
+                            width: MediaQuery.of(context).size.width * 0.29,
+                            child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.29,
+                                    child: AutoSizeText("Sign up for our emails",
+                                        style: GoogleFonts.merriweather(
+                                            fontWeight: FontWeight.w700,
+                                            letterSpacing: 1,
+                                            fontSize: 30)),
+                                  ),
+                                  const SizedBox(height: 15),
+                                  SizedBox(
+                                      width: MediaQuery.of(context).size.width * 0.29,
+                                      child: AutoSizeText(
+                                          "We'll send you updates on our latest launches and more. Need "
+                                          "to take off? Unsubscribe anytime.",
+                                          style: GoogleFonts.inter(
+                                              letterSpacing: 1, fontSize: 15))),
+                                 const SizedBox(height: 15),
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width * 0.29,
+                                    height: 50,
+                                    child: Expanded(
+                                      child: Row(
+                                        children: [
+                                          Flexible(flex: 3,
+                                            child: SizedBox(
+                                                width: MediaQuery.of(context).size.width * 0.28,
+                                              child: TextFormField(
+                                                decoration: const InputDecoration(
+                                                  border: OutlineInputBorder(
+                                                    borderRadius: BorderRadius.all(Radius.circular(0)),
+                                                  ),
+                                                  hintText: "Email address",
+                                                  filled: false,
+                                                  hintStyle:
+                                                      TextStyle(color: Colors.black26),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Flexible(flex: 1,
+                                            child: InkWell(
+                                                child: ClipRRect(
+                                                  child: Container(
+                                                    color: Colors.black,
+                                                    height: 50,
+                                                      width: MediaQuery.of(context).size.width * 0.1,
+                                                    child: const Icon(Icons.arrow_forward, color: Colors.white,)
+                                                  ),
+                                                )
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ]),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   Container(
                     height: 1000,

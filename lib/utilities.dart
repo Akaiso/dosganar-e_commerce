@@ -1,11 +1,17 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 //T = text, black = color, B = bold, number = fontSize
 
-TextStyle Tblack = TextStyle(color: Colors.black);
-TextStyle Tblack13B =
-    TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.bold);
-TextStyle Twhite10 = TextStyle(color: Colors.white, fontSize: 10);
+TextStyle tblack = const TextStyle(color: Colors.black);
+
+TextStyle tblack13B = TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.bold);
+
+TextStyle twhite10 = TextStyle(color: Colors.white, fontSize: 10);
+
+Color nude = Color(0xffddcec0);
+Color beige = Color(0xffe8ddd4);
 
 MouseRegion widgetHover(String string, style, hoverBehaviour, exitBehaviour) {
   return MouseRegion(
