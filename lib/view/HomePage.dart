@@ -218,7 +218,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   dynamic dropdownValue;
   int currentIndex = 0;
-  CarouselController carouselController =  CarouselController();
+  CarouselController carouselController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -1701,10 +1701,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           color: Colors.black,
                           child: const Center(
                             child: Text(
-                              "  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE."
-                              ,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 1.5),
+                              "  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.  ONLINE SHOPPING NOT YOUR THING? SEE THE PRODUCT IN REAL LIFE.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 1.5),
                             ),
                           ),
                         ),
@@ -1773,7 +1775,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   dropdownValue = value;
                                                 });
                                               },
-                                              hint: const Text("SELECT A STORE"),
+                                              hint:
+                                                  const Text("SELECT A STORE"),
                                             ),
                                           ),
                                   ),
@@ -1951,10 +1954,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             )
                           ]),
                   ),
-                 // MediaQuery.of(context).size.width< 1000? Container() :
+                  // MediaQuery.of(context).size.width< 1000? Container() :
                   Container(
                     color: beige,
-                    height: MediaQuery.of(context).size.height * 0.7,
+                    height: MediaQuery.of(context).size.height * 0.8,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                       child: Row(
@@ -1963,10 +1966,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         children: [
                           SizedBox(
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15,0,35,0),
+                              padding: const EdgeInsets.fromLTRB(15, 0, 35, 0),
                               child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text("SHOP",
@@ -1998,16 +2000,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     Text("Smart",
                                         style: GoogleFonts.inter(
                                             letterSpacing: 1, fontSize: 15)),
-
                                   ]),
                             ),
                           ),
                           SizedBox(
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15,0,35,0),
+                              padding: const EdgeInsets.fromLTRB(15, 0, 35, 0),
                               child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text("ABOUT",
@@ -2047,16 +2047,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     Text("Sustainability",
                                         style: GoogleFonts.inter(
                                             letterSpacing: 1, fontSize: 15)),
-
                                   ]),
                             ),
                           ),
                           SizedBox(
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15,0,35,0),
+                              padding: const EdgeInsets.fromLTRB(15, 0, 35, 0),
                               child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text("GET HELP",
@@ -2084,16 +2082,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     Text("Set my lock",
                                         style: GoogleFonts.inter(
                                             letterSpacing: 1, fontSize: 15)),
-
                                   ]),
                             ),
                           ),
                           SizedBox(
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15,0,35,0),
+                              padding: const EdgeInsets.fromLTRB(15, 0, 35, 0),
                               child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text("FAQS",
@@ -2113,35 +2109,33 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     SizedBox(
                                       width: 150,
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                       children: const [
-                                         Icon(Icons.ac_unit),
-                                         Padding(
-                                           padding: EdgeInsets.all(8.0),
-                                           child: Icon(Icons.access_time_filled),
-                                         ),
-                                         Icon(Icons.add_a_photo),
-                                         Padding(
-                                           padding: EdgeInsets.all(8.0),
-                                           child: Icon(Icons.add_business),
-                                         ),
-                                       ]
-                                      ),
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: const [
+                                            Icon(Icons.ac_unit),
+                                            Padding(
+                                              padding: EdgeInsets.all(8.0),
+                                              child: Icon(
+                                                  Icons.access_time_filled),
+                                            ),
+                                            Icon(Icons.add_a_photo),
+                                            Padding(
+                                              padding: EdgeInsets.all(8.0),
+                                              child: Icon(Icons.add_business),
+                                            ),
+                                          ]),
                                     )
                                   ]),
                             ),
                           ),
                           Flexible(
-
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15,0,55,0),
+                              padding: const EdgeInsets.fromLTRB(15, 0, 55, 0),
                               child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Flexible(
-
                                       child: Text("Sign up for our emails",
                                           style: GoogleFonts.merriweather(
                                               fontWeight: FontWeight.w700,
@@ -2150,43 +2144,52 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     ),
                                     const SizedBox(height: 15),
                                     Flexible(
-                                       // width: MediaQuery.of(context).size.width * 0.29,
+                                        // width: MediaQuery.of(context).size.width * 0.29,
                                         child: Text(
-                                            "We'll send you updates on our latest \n"
-                                                "launches and more. Need \n"
-                                            "to take off? Unsubscribe anytime.",
-                                            style: GoogleFonts.inter(
-                                                letterSpacing: 1, ),)),
-                                   const SizedBox(height: 15),
+                                      "We'll send you updates on our latest \n"
+                                      "launches and more. Need \n"
+                                      "to take off? Unsubscribe anytime.",
+                                      style: GoogleFonts.inter(
+                                        letterSpacing: 1,
+                                      ),
+                                    )),
+                                    const SizedBox(height: 15),
                                     SizedBox(
-                                     //width: MediaQuery.of(context).size.width * 0.29,
-                                     height: 50,
+                                      //width: MediaQuery.of(context).size.width * 0.29,
+                                      height: 50,
                                       child: Row(
                                         children: [
-                                          Flexible(flex: 3,
+                                          Flexible(
+                                            flex: 3,
                                             child: TextFormField(
-                                              decoration:  InputDecoration(
+                                              decoration: InputDecoration(
                                                 focusColor: Colors.black,
                                                 border: OutlineInputBorder(
-                                                  borderRadius: BorderRadius.circular(0),
+                                                  borderRadius:
+                                                      BorderRadius.circular(0),
                                                 ),
                                                 hintText: "Email address",
                                                 filled: false,
-                                                hintStyle:
-                                                    const TextStyle(color: Colors.black26),
+                                                hintStyle: const TextStyle(
+                                                    color: Colors.black26),
                                               ),
                                             ),
                                           ),
                                           InkWell(
-                                              child: Flexible(flex: 1,
-                                                child: Container(
-                                                  color: Colors.black,
-                                                  height: 50,
-                                                    width: MediaQuery.of(context).size.width * 0.1,
-                                                  child: const Icon(Icons.arrow_forward, color: Colors.white,)
-                                                ),
-                                              )
-                                          )
+                                              child: Flexible(
+                                            flex: 1,
+                                            child: Container(
+                                                color: Colors.black,
+                                                height: 50,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.1,
+                                                child: const Icon(
+                                                  Icons.arrow_forward,
+                                                  color: Colors.white,
+                                                )),
+                                          ))
                                         ],
                                       ),
                                     ),
@@ -2199,9 +2202,101 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ),
                   Container(height: 0.4, color: Colors.black),
                   Container(
-                    height: 150,
-                    color: beige,
-                  ),
+                      height: MediaQuery.of(context).size.width < 1000? 200 : 150,
+                      width: MediaQuery.of(context).size.width,
+                      color: beige,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 30.0, vertical: 10),
+                        child: MediaQuery.of(context).size.width < 1000
+                            ? Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                    Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              width: 1, color: Colors.black),
+                                        ),
+                                        width: MediaQuery.of(context)
+                                                    .size
+                                                    .width <
+                                                1000
+                                            ? MediaQuery.of(context).size.width
+                                            : 200,
+                                        height: 50,
+                                        child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: const [
+                                              Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: Icon(Icons.flag),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: Text("United States"),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: Icon(Icons.arrow_forward_ios),
+                                              )
+                                            ])),
+                                    const Text("Privacy policy"),
+                                    const Text("Terms and conditions"),
+                                    const Text("Accessibility"),
+                                    Row(children: const [
+                                      Icon(Icons.copyright, size: 14),
+                                      Text("2024 jrsk, Inc")
+                                    ])
+                                  ])
+                            : Row(
+                                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                    Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              width: 1, color: Colors.black),
+                                        ),
+                                        width: MediaQuery.of(context)
+                                                    .size
+                                                    .width <
+                                                1000
+                                            ? MediaQuery.of(context).size.width
+                                            : 200,
+                                        height: 50,
+                                        child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: const [
+                                              Icon(Icons.flag),
+                                              Text("United States"),
+                                              Icon(Icons.arrow_forward_ios)
+                                            ])),
+                                    Container(
+                                      width: 300,
+                                    ),
+                                    Flexible(
+                                      child: MediaQuery.of(context).size.width <
+                                              1000
+                                          ? Container()
+                                          : Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children:  [
+                                                  const Text("Privacy policy"),
+                                                  const Text("Terms and conditions"),
+                                                  const Text("Accessibility"),
+                                                  Row(children: const [
+                                                    Icon(Icons.copyright, size: 14,),
+                                                    Text("2024 jrsk, Inc")
+                                                  ])
+                                                ]),
+                                    ),
+                                  ]),
+                      )),
                 ],
               ),
             ),
