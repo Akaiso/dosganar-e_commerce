@@ -1955,254 +1955,594 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ]),
                   ),
                   // MediaQuery.of(context).size.width< 1000? Container() :
+
+                  ///FOOTER SECTION
                   Container(
                     color: beige,
-                    height: MediaQuery.of(context).size.height * 0.8,
+                    height: MediaQuery.of(context).size.width < 1000
+                        ? 1000
+                        : MediaQuery.of(context).size.height * 0.7,
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15, 0, 35, 0),
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("SHOP",
-                                        style: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w700,
-                                            letterSpacing: 1,
-                                            fontSize: 20)),
-                                    const SizedBox(height: 25),
-                                    Text("Best sellers",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Silver plated",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Gold plated",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Sports",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Leather",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Smart",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                  ]),
-                            ),
-                          ),
-                          SizedBox(
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15, 0, 35, 0),
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("ABOUT",
-                                        style: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w700,
-                                            letterSpacing: 1,
-                                            fontSize: 20)),
-                                    const SizedBox(height: 25),
-                                    Text("The Dosganar difference",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Our story",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Our stores",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Careers",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Impact",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Press",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Refer a friend",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Sustainability",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                  ]),
-                            ),
-                          ),
-                          SizedBox(
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15, 0, 35, 0),
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("GET HELP",
-                                        style: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w700,
-                                            letterSpacing: 1,
-                                            fontSize: 20)),
-                                    const SizedBox(height: 25),
-                                    Text("Order tracking",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Make an exchange",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Make a return",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Contact us",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Set my lock",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                  ]),
-                            ),
-                          ),
-                          SizedBox(
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15, 0, 35, 0),
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("FAQS",
-                                        style: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w700,
-                                            letterSpacing: 1,
-                                            fontSize: 20)),
-                                    const SizedBox(height: 25),
-                                    Text("All FAQS",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    Text("Warranty and repairs",
-                                        style: GoogleFonts.inter(
-                                            letterSpacing: 1, fontSize: 15)),
-                                    const SizedBox(height: 15),
-                                    SizedBox(
-                                      width: 150,
-                                      child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: const [
-                                            Icon(Icons.ac_unit),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Icon(
-                                                  Icons.access_time_filled),
-                                            ),
-                                            Icon(Icons.add_a_photo),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Icon(Icons.add_business),
-                                            ),
-                                          ]),
-                                    )
-                                  ]),
-                            ),
-                          ),
-                          Flexible(
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15, 0, 55, 0),
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Flexible(
-                                      child: Text("Sign up for our emails",
-                                          style: GoogleFonts.merriweather(
-                                              fontWeight: FontWeight.w700,
-                                              letterSpacing: 1,
-                                              fontSize: 25)),
-                                    ),
-                                    const SizedBox(height: 15),
-                                    Flexible(
-                                        // width: MediaQuery.of(context).size.width * 0.29,
-                                        child: Text(
-                                      "We'll send you updates on our latest \n"
-                                      "launches and more. Need \n"
-                                      "to take off? Unsubscribe anytime.",
-                                      style: GoogleFonts.inter(
-                                        letterSpacing: 1,
-                                      ),
-                                    )),
-                                    const SizedBox(height: 15),
-                                    SizedBox(
-                                      //width: MediaQuery.of(context).size.width * 0.29,
-                                      height: 50,
-                                      child: Row(
+                      padding: const EdgeInsets.fromLTRB(30, 30, 20, 0),
+                      child: MediaQuery.of(context).size.width < 1000
+                          ? Column(
+                          children: [
+                              Flexible(
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(15, 0, 55, 0),
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height * 0.4,
+                                    child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Flexible(
-                                            flex: 3,
-                                            child: TextFormField(
-                                              decoration: InputDecoration(
-                                                focusColor: Colors.black,
-                                                border: OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(0),
+                                            child: Text("Sign up for our emails",
+                                                style: GoogleFonts.merriweather(
+                                                    fontWeight: FontWeight.w700,
+                                                    letterSpacing: 1,
+                                                    fontSize: 25)),
+                                          ),
+                                          const SizedBox(height: 15),
+                                          Flexible(
+                                              child: Text(
+                                            "We'll send you updates on our latest \n"
+                                            "launches and more. Need \n"
+                                            "to take off? Unsubscribe anytime.",
+                                            style: GoogleFonts.inter(
+                                              letterSpacing: 1,
+                                            ),
+                                          )),
+                                          const SizedBox(height: 15),
+                                          SizedBox(
+                                            height: 50,
+                                            child: Row(
+                                              children: [
+                                                Flexible(
+                                                  flex: 3,
+                                                  child: TextFormField(
+                                                    decoration: InputDecoration(
+                                                      focusColor: Colors.black,
+                                                      border: OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                                0),
+                                                      ),
+                                                      hintText: "Email address",
+                                                      filled: false,
+                                                      hintStyle: const TextStyle(
+                                                          color: Colors.black26),
+                                                    ),
+                                                  ),
                                                 ),
-                                                hintText: "Email address",
-                                                filled: false,
-                                                hintStyle: const TextStyle(
-                                                    color: Colors.black26),
-                                              ),
+                                                InkWell(
+                                                    child: Flexible(
+                                                  flex: 1,
+                                                  child: Container(
+                                                      color: Colors.black,
+                                                      height: 50,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.1,
+                                                      child: const Icon(
+                                                        Icons.arrow_forward,
+                                                        color: Colors.white,
+                                                      )),
+                                                ))
+                                              ],
                                             ),
                                           ),
-                                          InkWell(
-                                              child: Flexible(
-                                            flex: 1,
-                                            child: Container(
-                                                color: Colors.black,
-                                                height: 50,
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.1,
-                                                child: const Icon(
-                                                  Icons.arrow_forward,
-                                                  color: Colors.white,
-                                                )),
-                                          ))
-                                        ],
+                                        ]),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.width * 0.5,
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            0, 0, 0, 0),
+                                        child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text("SHOP",
+                                                  style: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      letterSpacing: 1,
+                                                      fontSize: 20)),
+                                              const SizedBox(height: 25),
+                                              Text("Best sellers",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                              const SizedBox(height: 15),
+                                              Text("Silver plated",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                              const SizedBox(height: 15),
+                                              Text("Gold plated",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                              const SizedBox(height: 15),
+                                              Text("Sports",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                              const SizedBox(height: 15),
+                                              Text("Leather",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                              const SizedBox(height: 15),
+                                              Text("Smart",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                            ]),
                                       ),
                                     ),
-                                  ]),
+                                    Container(
+                                      width: MediaQuery.of(context).size.width * 0.4,
+                                      child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Text("ABOUT",
+                                                style: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.w700,
+                                                    letterSpacing: 1,
+                                                    fontSize: 20)),
+                                            const SizedBox(height: 25),
+                                            Text("The Dosganar difference",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                            const SizedBox(height: 15),
+                                            Text("Our story",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                            const SizedBox(height: 15),
+                                            Text("Our stores",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                            const SizedBox(height: 15),
+                                            Text("Careers",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                            const SizedBox(height: 15),
+                                            Text("Impact",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                            const SizedBox(height: 15),
+                                            Text("Press",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                            const SizedBox(height: 15),
+                                            Text("Refer a friend",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                            const SizedBox(height: 15),
+                                            Text("Sustainability",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                          ]),
+                                    ),
+                                  ])),
+                              SizedBox(height: 40),
+                              Container(
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.width * 0.5,
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            15, 0, 0, 0),
+                                        child: Column(
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Text("GET HELP",
+                                                  style: GoogleFonts.inter(
+                                                      fontWeight: FontWeight.w700,
+                                                      letterSpacing: 1,
+                                                      fontSize: 20)),
+                                              const SizedBox(height: 25),
+                                              Text("Order tracking",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                              const SizedBox(height: 15),
+                                              Text("Make an exchange",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                              const SizedBox(height: 15),
+                                              Text("Make a return",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                              const SizedBox(height: 15),
+                                              Text("Contact us",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                              const SizedBox(height: 15),
+                                              Text("Set my lock",
+                                                  style: GoogleFonts.inter(
+                                                      letterSpacing: 1,
+                                                      fontSize: 15)),
+                                            ]),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Text("FAQS",
+                                                style: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.w700,
+                                                    letterSpacing: 1,
+                                                    fontSize: 20)),
+                                            const SizedBox(height: 25),
+                                            Text("All FAQS",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                            const SizedBox(height: 15),
+                                            Text("Warranty and repairs",
+                                                style: GoogleFonts.inter(
+                                                    letterSpacing: 1,
+                                                    fontSize: 15)),
+                                            const SizedBox(height: 15),
+                                            SizedBox(
+                                              width: 150,
+                                              child: Row(
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                                  children: const [
+                                                    Icon(Icons.ac_unit),
+                                                    Padding(
+                                                      padding:
+                                                      EdgeInsets.all(8.0),
+                                                      child: Icon(Icons
+                                                          .access_time_filled),
+                                                    ),
+                                                    Icon(Icons.add_a_photo),
+                                                    Padding(
+                                                      padding:
+                                                      EdgeInsets.all(8.0),
+                                                      child: Icon(
+                                                          Icons.add_business),
+                                                    ),
+                                                  ]),
+                                            )
+                                          ]),
+                                    ),
+                                  ])),
+                            ])
+                          : Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(10, 0, 35, 0),
+                                    child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text("SHOP",
+                                              style: GoogleFonts.inter(
+                                                  fontWeight: FontWeight.w700,
+                                                  letterSpacing: 1,
+                                                  fontSize: 20)),
+                                          const SizedBox(height: 25),
+                                          Text("Best sellers",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Silver plated",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Gold plated",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Sports",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Leather",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Smart",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                        ]),
+                                  ),
+                                ),
+                                SizedBox(
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(10, 0, 35, 0),
+                                    child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text("ABOUT",
+                                              style: GoogleFonts.inter(
+                                                  fontWeight: FontWeight.w700,
+                                                  letterSpacing: 1,
+                                                  fontSize: 20)),
+                                          const SizedBox(height: 25),
+                                          Text("The Dosganar difference",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Our story",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Our stores",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Careers",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Impact",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Press",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Refer a friend",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Sustainability",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                        ]),
+                                  ),
+                                ),
+                                SizedBox(
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(10, 0, 35, 0),
+                                    child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text("GET HELP",
+                                              style: GoogleFonts.inter(
+                                                  fontWeight: FontWeight.w700,
+                                                  letterSpacing: 1,
+                                                  fontSize: 20)),
+                                          const SizedBox(height: 25),
+                                          Text("Order tracking",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Make an exchange",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Make a return",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Contact us",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Set my lock",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                        ]),
+                                  ),
+                                ),
+                                SizedBox(
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(10, 0, 35, 0),
+                                    child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text("FAQS",
+                                              style: GoogleFonts.inter(
+                                                  fontWeight: FontWeight.w700,
+                                                  letterSpacing: 1,
+                                                  fontSize: 20)),
+                                          const SizedBox(height: 25),
+                                          Text("All FAQS",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          Text("Warranty and repairs",
+                                              style: GoogleFonts.inter(
+                                                  letterSpacing: 1,
+                                                  fontSize: 15)),
+                                          const SizedBox(height: 15),
+                                          SizedBox(
+                                            width: 150,
+                                            child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: const [
+                                                  Icon(Icons.ac_unit),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.all(8.0),
+                                                    child: Icon(Icons
+                                                        .access_time_filled),
+                                                  ),
+                                                  Icon(Icons.add_a_photo),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.all(8.0),
+                                                    child: Icon(
+                                                        Icons.add_business),
+                                                  ),
+                                                ]),
+                                          )
+                                        ]),
+                                  ),
+                                ),
+                                Flexible(
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(10, 0, 55, 0),
+                                    child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                                "Sign up for our emails",
+                                                style: GoogleFonts.merriweather(
+                                                    fontWeight: FontWeight.w700,
+                                                    letterSpacing: 1,
+                                                    fontSize: 25)),
+                                          ),
+                                          const SizedBox(height: 15),
+                                          Flexible(
+                                              child: Text(
+                                            "We'll send you updates on our latest \n"
+                                            "launches and more. Need \n"
+                                            "to take off? Unsubscribe anytime.",
+                                            style: GoogleFonts.inter(
+                                              letterSpacing: 1,
+                                            ),
+                                          )),
+                                          const SizedBox(height: 15),
+                                          SizedBox(
+                                            //width: MediaQuery.of(context).size.width * 0.29,
+                                            height: 50,
+                                            child: Row(
+                                              children: [
+                                                Flexible(
+                                                  flex: 10,
+                                                  child: TextFormField(
+                                                    decoration: InputDecoration(
+                                                      focusColor: Colors.black,
+                                                      border:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0),
+                                                      ),
+                                                      hintText: "Email address",
+                                                      filled: false,
+                                                      hintStyle:
+                                                          const TextStyle(
+                                                              color: Colors
+                                                                  .black26),
+                                                    ),
+                                                  ),
+                                                ),
+                                                InkWell(
+                                                    child: Flexible(
+                                                  flex: 1,
+                                                  child: Container(
+                                                      color: Colors.black,
+                                                      height: 50,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.05,
+                                                      child: const Icon(
+                                                        Icons.arrow_forward,
+                                                        color: Colors.white,
+                                                      )),
+                                                ))
+                                              ],
+                                            ),
+                                          ),
+                                        ]),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
-                      ),
                     ),
                   ),
                   Container(height: 0.4, color: Colors.black),
+
+                  ///FOOTER LAST SECTION
                   Container(
-                      height: MediaQuery.of(context).size.width < 1000? 200 : 150,
+                      height:
+                          MediaQuery.of(context).size.width < 1000 ? 200 : 150,
                       width: MediaQuery.of(context).size.width,
                       color: beige,
                       child: Padding(
@@ -2240,7 +2580,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                               ),
                                               Padding(
                                                 padding: EdgeInsets.all(8.0),
-                                                child: Icon(Icons.arrow_forward_ios),
+                                                child: Icon(
+                                                    Icons.arrow_forward_ios),
                                               )
                                             ])),
                                     const Text("Privacy policy"),
@@ -2253,7 +2594,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   ])
                             : Row(
                                 // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                     Container(
                                         decoration: BoxDecoration(
@@ -2285,12 +2626,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           : Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.spaceEvenly,
-                                              children:  [
+                                              children: [
                                                   const Text("Privacy policy"),
-                                                  const Text("Terms and conditions"),
+                                                  const Text(
+                                                      "Terms and conditions"),
                                                   const Text("Accessibility"),
                                                   Row(children: const [
-                                                    Icon(Icons.copyright, size: 14,),
+                                                    Icon(
+                                                      Icons.copyright,
+                                                      size: 14,
+                                                    ),
                                                     Text("2024 jrsk, Inc")
                                                   ])
                                                 ]),
