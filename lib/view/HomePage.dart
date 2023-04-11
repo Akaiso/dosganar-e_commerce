@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utilities.dart';
 
@@ -9,6 +9,10 @@ class HomePage extends StatefulWidget {
 
   @override
   State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   double iconSize = 15;
   double arrivalSize = 13;
   double bestSellersSize = 13;
@@ -21,17 +25,41 @@ class HomePage extends StatefulWidget {
   double luggage = 30;
   Color shopnowColor = Colors.black;
   Color shopnowBoxColor = Colors.transparent;
-}
+  double popImage1height = 300;
+  double popImage1width = 280;
 
-class _HomePageState extends State<HomePage> {
+
+  late AnimationController _controller;
+  late Animation _animation;
+  late Animation padding;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: Duration(milliseconds: 275),
+      vsync: this,
+    );
+
+    _animation = Tween(begin: 1.0, end: 1.2)
+        .animate(CurvedAnimation(parent: _controller, curve: Curves.ease));
+
+    padding = Tween(begin: 0.0, end: -25.0)
+        .animate(CurvedAnimation(parent: _controller, curve: Curves.ease));
+
+    _controller.addListener(() {
+      setState(() {});
+    });
+  }
+
   List<Widget> items = [
     const Text(
-      'welcome to battle royale',
+      '50% discount off bags and shoes',
       style: TextStyle(fontSize: 15, color: Colors.black),
     ),
-    const Text('the match is about to start',
+    const Text('T-shirt wholesale promo on-going',
         style: TextStyle(fontSize: 15, color: Colors.black)),
-    const Text('get ready', style: TextStyle(fontSize: 14, color: Colors.black))
+    const Text('Fund your wallet unlock irresistible offers', style: TextStyle(fontSize: 14, color: Colors.black))
   ];
   @override
   Widget build(BuildContext context) {
@@ -47,15 +75,17 @@ class _HomePageState extends State<HomePage> {
                 snap: true,
                 title: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MediaQuery.of(context).size.width < 1150
+                      ? MainAxisAlignment.center
+                      : MainAxisAlignment.end,
                   children: [
                     Icon(
                       Icons.arrow_back_ios,
-                      size: widget.iconSize,
+                      size: iconSize,
                       color: Colors.black,
                     ),
                     SizedBox(
-                      width: 500,
+                      width: 400,
                       height: 20,
                       child: CarouselSlider(
                           items: items,
@@ -86,191 +116,221 @@ class _HomePageState extends State<HomePage> {
                 ),
                 centerTitle: true,
                 actions: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const SizedBox(width: 80),
-                      Text(
-                        'Help',
-                        style: Tblack,
-                      ),
-                      const SizedBox(width: 40),
-                      Text(
-                        'Stores',
-                        style: Tblack,
-                      ),
-                      const SizedBox(width: 40),
-                      const Icon(
-                        Icons.location_pin,
-                        size: 15,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(width: 10),
-                      Text(
-                        'Earth',
-                        style: Tblack,
-                      ),
-                      const SizedBox(width: 40),
-                    ],
-                  )
+                  MediaQuery.of(context).size.width < 1150
+                      ? Row()
+                      : Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const SizedBox(width: 80),
+                            Text(
+                              'Help',
+                              style: Tblack,
+                            ),
+                            const SizedBox(width: 40),
+                            Text(
+                              'Stores',
+                              style: Tblack,
+                            ),
+                            const SizedBox(width: 40),
+                            const Icon(
+                              Icons.location_pin,
+                              size: 15,
+                              color: Colors.black,
+                            ),
+                            const SizedBox(width: 10),
+                            Text(
+                              'Earth',
+                              style: Tblack,
+                            ),
+                            const SizedBox(width: 40),
+                          ],
+                        )
                 ],
                 bottom: AppBar(
+                  leading: MediaQuery.of(context).size.width < 1150
+                      ? Icon(
+                          Icons.menu,
+                          color: Colors.black,
+                        )
+                      : null,
                   centerTitle: true,
                   elevation: 0,
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: Colors.white,
                   title: Container(
-                    color: Colors.white,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          color: Colors.black,
-                          child: const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text(
-                              'DOGANAR',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const SizedBox(width: 150),
-                            SizedBox(
-                                width: 110,
-                                child: widgetHover(
-                                    'NEW ARRIVALS',
-                                    TextStyle(
-                                        color: Colors.black,
-                                        fontSize: widget.arrivalSize),
-                                    (_) => setState(() {
-                                          widget.arrivalSize = 15;
-                                        }),
-                                    (_) => setState(() {
-                                          widget.arrivalSize = 13;
-                                        }))),
-                            const SizedBox(width: 10),
-                            SizedBox(
-                                width: 110,
-                                child: widgetHover(
-                                    'BEST SELLERS',
-                                    TextStyle(
-                                        color: Colors.black,
-                                        fontSize: widget.bestSellersSize),
-                                    (_) => setState(() {
-                                          widget.bestSellersSize = 15;
-                                        }),
-                                    (_) => setState(() {
-                                          widget.bestSellersSize = 13;
-                                        }))),
-                            const SizedBox(width: 10),
-                            SizedBox(
-                                width: 80,
-                                child: widgetHover(
-                                    'SUITCASES',
-                                    TextStyle(
-                                        color: Colors.black,
-                                        fontSize: widget.suitcasesSize),
-                                    (_) => setState(() {
-                                          widget.suitcasesSize = 15;
-                                        }),
-                                    (_) => setState(() {
-                                          widget.suitcasesSize = 13;
-                                        }))),
-                            const SizedBox(width: 10),
-                            SizedBox(
-                                width: 50,
-                                child: widgetHover(
-                                    'BAGS',
-                                    TextStyle(
-                                        color: Colors.black,
-                                        fontSize: widget.bagsSize),
-                                    (_) => setState(() {
-                                          widget.bagsSize = 15;
-                                        }),
-                                    (_) => setState(() {
-                                          widget.bagsSize = 13;
-                                        }))),
-                            const SizedBox(width: 10),
-                            SizedBox(
-                                width: 100,
-                                child: widgetHover(
-                                    'ACCESSORIES',
-                                    TextStyle(
-                                        color: Colors.black,
-                                        fontSize: widget.accessSize),
-                                    (_) => setState(() {
-                                          widget.accessSize = 15;
-                                        }),
-                                    (_) => setState(() {
-                                          widget.accessSize = 13;
-                                        }))),
-                            const SizedBox(width: 10),
-                            SizedBox(
-                                width: 170,
-                                child: widgetHover(
-                                    'GUIDES & COLLECTIONS',
-                                    TextStyle(
-                                        color: Colors.black,
-                                        fontSize: widget.gcSize),
-                                    (_) => setState(() {
-                                          widget.gcSize = 15;
-                                        }),
-                                    (_) => setState(() {
-                                          widget.gcSize = 13;
-                                        }))),
-                            const SizedBox(width: 100),
-                            Row(
-                              children: [
-                                InkWell(
-                                  child: SizedBox(
-                                      width: 50,
-                                      child: widgetHover(
-                                          'LOG IN',
-                                          TextStyle(
-                                              color: Colors.black,
-                                              fontSize: widget.login),
-                                          (_) => setState(() {
-                                                widget.login = 15;
-                                              }),
-                                          (_) => setState(() {
-                                                widget.login = 13;
-                                              }))),
-                                ),
-                                const SizedBox(width: 10),
-                                SizedBox(
-                                  width: 50,
-                                  child: iconHoverBehaviour(
-                                    (_) => setState(() {
-                                      widget.search = 32;
-                                    }),
-                                    (_) => setState(() {
-                                      widget.search = 30;
-                                    }),
-                                    Icons.search,
-                                    widget.search,
+                        MediaQuery.of(context).size.width < 1150
+                            ? Container()
+                            : Container(
+                                color: Colors.black,
+                                child: const Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'DOGANAR',
+                                    style: TextStyle(color: Colors.white),
                                   ),
                                 ),
-                                SizedBox(
-                                  width: 30,
-                                  child: iconHoverBehaviour(
-                                      (_) => setState(() {
-                                            widget.luggage = 32;
-                                          }),
-                                      (_) => setState(() {
-                                            widget.luggage = 30;
-                                          }),
-                                      Icons.luggage,
-                                      widget.luggage),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
+                              ),
+                        MediaQuery.of(context).size.width < 1150
+                            ? Row(
+                                children: [
+                                  Container(
+                                    color: Colors.black,
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'DOGANAR',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            : Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  const SizedBox(width: 150),
+                                  SizedBox(
+                                      width: 110,
+                                      child: widgetHover(
+                                          'NEW ARRIVALS',
+                                          TextStyle(
+                                              color: Colors.black,
+                                              fontSize: arrivalSize),
+                                          (_) => setState(() {
+                                                arrivalSize = 15;
+                                              }),
+                                          (_) => setState(() {
+                                                arrivalSize = 13;
+                                              }))),
+                                  const SizedBox(width: 10),
+                                  SizedBox(
+                                      width: 110,
+                                      child: widgetHover(
+                                          'BEST SELLERS',
+                                          TextStyle(
+                                              color: Colors.black,
+                                              fontSize: bestSellersSize),
+                                          (_) => setState(() {
+                                                bestSellersSize = 15;
+                                              }),
+                                          (_) => setState(() {
+                                                bestSellersSize = 13;
+                                              }))),
+                                  const SizedBox(width: 10),
+                                  SizedBox(
+                                      width: 80,
+                                      child: widgetHover(
+                                          'SUITCASES',
+                                          TextStyle(
+                                              color: Colors.black,
+                                              fontSize: suitcasesSize),
+                                          (_) => setState(() {
+                                                suitcasesSize = 15;
+                                              }),
+                                          (_) => setState(() {
+                                                suitcasesSize = 13;
+                                              }))),
+                                  const SizedBox(width: 10),
+                                  SizedBox(
+                                      width: 50,
+                                      child: widgetHover(
+                                          'BAGS',
+                                          TextStyle(
+                                              color: Colors.black,
+                                              fontSize: bagsSize),
+                                          (_) => setState(() {
+                                                bagsSize = 15;
+                                              }),
+                                          (_) => setState(() {
+                                                bagsSize = 13;
+                                              }))),
+                                  const SizedBox(width: 10),
+                                  SizedBox(
+                                      width: 100,
+                                      child: widgetHover(
+                                          'ACCESSORIES',
+                                          TextStyle(
+                                              color: Colors.black,
+                                              fontSize: accessSize),
+                                          (_) => setState(() {
+                                                accessSize = 15;
+                                              }),
+                                          (_) => setState(() {
+                                                accessSize = 13;
+                                              }))),
+                                  const SizedBox(width: 10),
+                                  SizedBox(
+                                      width: 170,
+                                      child: widgetHover(
+                                          'GUIDES & COLLECTIONS',
+                                          TextStyle(
+                                              color: Colors.black,
+                                              fontSize: gcSize),
+                                          (_) => setState(() {
+                                                gcSize = 15;
+                                              }),
+                                          (_) => setState(() {
+                                                gcSize = 13;
+                                              }))),
+                                  // const SizedBox(width: 100),
+                                ],
+                              ),
                       ],
                     ),
                   ),
+                  actions: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          InkWell(
+                            child: SizedBox(
+                                width: 50,
+                                child: widgetHover(
+                                    'LOG IN',
+                                    TextStyle(
+                                        color: Colors.black, fontSize: login),
+                                    (_) => setState(() {
+                                          login = 15;
+                                        }),
+                                    (_) => setState(() {
+                                          login = 13;
+                                        }))),
+                          ),
+                          const SizedBox(width: 10),
+                          SizedBox(
+                            width: 50,
+                            child: iconHoverBehaviour(
+                              (_) => setState(() {
+                                search = 32;
+                              }),
+                              (_) => setState(() {
+                                search = 30;
+                              }),
+                              Icons.search,
+                              search,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                            child: iconHoverBehaviour(
+                                (_) => setState(() {
+                                      luggage = 32;
+                                    }),
+                                (_) => setState(() {
+                                      luggage = 30;
+                                    }),
+                                Icons.luggage,
+                                luggage),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
                 ),
               )
             ],
@@ -280,11 +340,13 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    child: Row(
+                    child: Wrap(
                       children: [
                         Container(
                           height: 500,
-                          width: MediaQuery.of(context).size.width * 0.5,
+                          width: MediaQuery.of(context).size.width < 1000
+                              ? MediaQuery.of(context).size.width
+                              : MediaQuery.of(context).size.width * 0.5,
                           color: const Color(0xff9eabb0),
                           child: Image.asset(
                             'assets/images/first.jpg',
@@ -293,42 +355,58 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Container(
                           height: 500,
-                          width: MediaQuery.of(context).size.width * 0.5,
+                          width: MediaQuery.of(context).size.width < 100
+                              ? MediaQuery.of(context).size.width
+                              : MediaQuery.of(context).size.width * 0.5,
                           color: const Color(0xff7f1eb),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
-
                               children: [
-                            const Text('SAVE ON THE PERFECT ITEM', style: TextStyle(fontSize: 70,),textAlign: TextAlign.center),
-                            const Text(
-                                '\$50 off any item for a limited time. *Hurry \n'
-                                '-Your new favourite item is waiting',style: TextStyle(fontSize: 20,), textAlign: TextAlign.center),
-                            MouseRegion(
-                              onHover: (_){
-                                setState(() {
-                                  widget.shopnowBoxColor = Colors.black;
-                                  widget.shopnowColor = Colors.white;
-                                });
-                              },
-                              onExit: (_){
-                                setState(() {
-                                  widget.shopnowBoxColor = Colors.transparent;
-                                  widget.shopnowColor = Colors.black;
-                                });
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: widget.shopnowBoxColor,
-                                  border: Border.all(color: Colors.black)
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
-                                  child: InkWell(child: Text('SHOP NOW', style: TextStyle(color: widget.shopnowColor, fontWeight: FontWeight.w500),)),
-                                ),
-                              ),
-                            )
-                          ]),
+                                const Text('SAVE ON THE PERFECT ITEM',
+                                    style: TextStyle(
+                                      fontSize: 70,
+                                    ),
+                                    textAlign: TextAlign.center),
+                                const Text(
+                                    '\$50 off any item for a limited time. *Hurry \n'
+                                    '-Your new favourite item is waiting',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                    ),
+                                    textAlign: TextAlign.center),
+                                MouseRegion(
+                                  onHover: (_) {
+                                    setState(() {
+                                      shopnowBoxColor = Colors.black;
+                                      shopnowColor = Colors.white;
+                                    });
+                                  },
+                                  onExit: (_) {
+                                    setState(() {
+                                      shopnowBoxColor = Colors.transparent;
+                                      shopnowColor = Colors.black;
+                                    });
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        color: shopnowBoxColor,
+                                        border:
+                                            Border.all(color: Colors.black)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 15.0, horizontal: 30),
+                                      child: InkWell(
+                                          child: Text(
+                                        'SHOP NOW',
+                                        style: TextStyle(
+                                            color: shopnowColor,
+                                            fontWeight: FontWeight.w500),
+                                      )),
+                                    ),
+                                  ),
+                                )
+                              ]),
                         )
                       ],
                     ),
@@ -368,7 +446,7 @@ class _HomePageState extends State<HomePage> {
                   Text(
                     'Build Your',
                     style: GoogleFonts.allura(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                       fontSize: 30,
                     )),
                   ),
@@ -377,6 +455,79 @@ class _HomePageState extends State<HomePage> {
                     'BUNDLE',
                     style: TextStyle(fontSize: 50, letterSpacing: 2),
                   ),
+                  const SizedBox(height: 50),
+                  Wrap(
+                    direction: Axis.horizontal,
+                    children: [
+                      MouseRegion(
+                        onEnter: (value){
+                          setState(() {
+                            _controller.forward();
+                          });
+                        },onExit: (value){
+                        setState(() {
+                          _controller.reverse();
+                        });
+                      },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black,
+                                offset: Offset(0.0 , 20.0),
+                                spreadRadius: -10,
+                                blurRadius: 30
+                              )
+                            ]
+                          ),
+                          child: ClipRRect(
+                            child: Container(
+                              // clipBehavior: Clip.antiAlias,
+                              height: popImage1height,
+                              width: popImage1width,
+                               transform: Matrix4(_animation.value,0,0,0,0,_animation.value,0,0,0,0,1,0,padding.value,padding.value,0,1),
+                              child: Image.asset(
+                                'assets/images/RTFM.jpg',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      // Container(
+                      //  // clipBehavior: Clip.hardEdge,
+                      //   height: widget.popImage1height,
+                      //   width: widget.popImage1width,
+                      //   transform: Matrix4(_animation.value,0,0,0,0,_animation.value,0,0,0,0,1,0,padding.value,padding.value,0,1),
+                      //   child: Image.asset(
+                      //     'assets/images/RTFM.jpg',
+                      //     fit: BoxFit.cover,
+                      //   ),
+                      // ),
+                      Container(
+                        height: 300,
+                        width: 280,
+                        color: Colors.brown,
+                      ),
+                      Container(
+                        height: 300,
+                        width: 280,
+                        color: Colors.tealAccent,
+                      ),
+                      Container(
+                        height: 300,
+                        width: 280,
+                        color: Colors.teal,
+                      ),
+                      Container(
+                        height: 300,
+                        width: 280,
+                        color: Colors.yellow,
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
