@@ -6,8 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utilities.dart';
 
 class HomePage extends StatefulWidget {
-   HomePage({Key? key}) : super(key: key);
-
+  HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -54,14 +53,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late Animation _animation8;
   late Animation padding8;
 
-  late final ScrollController scrollController1 ;
-  late final ScrollController scrollController2 ;
-
+  late final ScrollController scrollController1;
+  late final ScrollController scrollController2;
 
   @override
   void initState() {
     super.initState();
-    scrollController1 = ScrollController()..addListener(() {syncScroll();});
+    scrollController1 = ScrollController()
+      ..addListener(() {
+        syncScroll();
+      });
     scrollController2 = ScrollController();
 
     // setState(() {
@@ -71,8 +72,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     //     //     duration: Duration(milliseconds: 50000), curve: Curves.linear);
     //   });
     // });
-
-
 
     _controller = AnimationController(
       duration: const Duration(milliseconds: 275),
@@ -170,8 +169,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     });
   }
 
-
-
   @override
   void dispose() {
     scrollController1.dispose();
@@ -179,15 +176,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  void syncScroll(){
-    if(!mounted) return;
-    if(scrollController2.hasClients){
+  void syncScroll() {
+    if (!mounted) return;
+    if (scrollController2.hasClients) {
       final verticalOffset = scrollController1.offset;
-      final horizontalTarget = (verticalOffset / scrollController1.position.maxScrollExtent)*
-    scrollController2.position.maxScrollExtent;
+      final horizontalTarget =
+          (verticalOffset / scrollController1.position.maxScrollExtent) *
+              scrollController2.position.maxScrollExtent;
       scrollController2.jumpTo(horizontalTarget);
     }
-
   }
 
   List<Widget> items = [
@@ -201,6 +198,25 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         style: TextStyle(fontSize: 14, color: Colors.black))
   ];
 
+  List items4 = [
+    "NYC: NoHo",
+    "Austin",
+    "Boston: Newbury",
+    "Boston: Seaport",
+    "San Jose",
+    "Seattle",
+    "Washington DC",
+    "San Francisco",
+    "NYC: Williamsburg",
+    "London",
+    "LA: West Hollywood",
+    "LA: Venice Beach",
+    "Houston",
+    "Dallas",
+    "Chicago"
+  ];
+
+  dynamic dropdownValue;
   int currentIndex = 0;
   CarouselController carouselController = new CarouselController();
 
@@ -1687,25 +1703,29 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     controller: scrollController2,
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      children:   [
+                      children: [
                         Container(
                           height: 30,
                           color: Colors.black,
                           child: const Center(
-                            child: Text("DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR "
-                                "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
-                                , style: TextStyle(color: Colors.white),),
+                            child: Text(
+                              "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR "
+                              "DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR"
+                              " DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR DOSGANAR",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
+
+                  ///DROP DOWN BUTTON TO ALL STORES
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Wrap(
@@ -1722,47 +1742,62 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           color: const Color(0xffe8ddd4),
                           child: Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 30.0),
+                                const EdgeInsets.symmetric(horizontal: 30.0),
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                   Padding(
-                                    padding:
-                                    EdgeInsets.symmetric(vertical: 10.0),
-                                    child: DropdownButton(items: [
-                                     // List<DropdownMenuItem> items3 = [],
-                                      DropdownMenuItem(child: Text("NYC: NoHo")),
-                                      DropdownMenuItem(child: Text("Austin")),
-                                      DropdownMenuItem(child: Text("Boston: Newbury")),
-                                      DropdownMenuItem(child: Text("Boston: Seaport")),
-                                      DropdownMenuItem(child: Text("San Jose")),
-                                      DropdownMenuItem(child: Text("Seattle")),
-                                      DropdownMenuItem(child: Text("Washington DC")),
-                                      DropdownMenuItem(child: Text("San Francisco")),
-                                      DropdownMenuItem(child: Text("NYC: Williamsburg")),
-                                      DropdownMenuItem(child: Text("London")),
-                                      DropdownMenuItem(child: Text("LA: West Hollywood")),
-                                      DropdownMenuItem(child: Text("LA: Venice Beach")),
-                                      DropdownMenuItem(child: Text("Houston")),
-                                      DropdownMenuItem(child: Text("Dallas")),
-                                      DropdownMenuItem(child: Text("Cicago")),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(),
+                                    ),
+                                    child: MediaQuery.of(context).size.width < 1000? Center(
+                                      child: DropdownButton(
+                                        items: items4
+                                            .map((e) => DropdownMenuItem(
+                                            value: e, child: Text(e)))
+                                            .toList(),
+                                        value: dropdownValue,
+                                        onChanged: (value) {
+                                          setState(() {
+                                            dropdownValue = value;
+                                          });
+                                        },
+                                        hint: const Padding(
+                                          padding: EdgeInsets.symmetric(horizontal: 20.0),
+                                          child: Text("SELECT A STORE"),
+                                        ),
+                                        isExpanded: true,
+                                      ),
+                                    ) : Center(
+                                      child: DropdownButton(
+                                        items: items4
+                                            .map((e) => DropdownMenuItem(
+                                                value: e, child: Text(e)))
+                                            .toList(),
+                                        value: dropdownValue,
+                                        onChanged: (value) {
+                                          setState(() {
+                                            dropdownValue = value;
+                                          });
+                                        },
+                                        hint: Text("SELECT A STORE"),
 
-                                    ], onChanged: (value) {  },
-
+                                      ),
                                     ),
                                   ),
                                   SizedBox(
                                     width: 300,
                                     height: 80,
-                                    child: AutoSizeText('New in for spring',
+                                    child: AutoSizeText('DOSGANAR IRL',
                                         style: GoogleFonts.merriweather(
                                             fontSize: 70),
                                         textAlign: TextAlign.left),
                                   ),
                                   const Text(
                                       'Be the first out in the wild with our award-winning accessories \n'
-                                          'now available in stores',
+                                      'now available in stores',
                                       style: TextStyle(
                                         fontSize: 15,
                                       ),
@@ -1772,7 +1807,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     child: Row(
                                       children: const [
                                         Text(
-                                          "SHOP NOW",
+                                          "SEE ALL STORES",
                                           style: TextStyle(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w600),
